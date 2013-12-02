@@ -12,4 +12,4 @@ and my [dot_vim][0] files
 ## Installation
 `bash <(curl -s https://raw.github.com/CPWeaver/dotfiles/master/install)`
 
-[0]: https://github.com/dansomething/dot_vim
+[0]: https://github.com/CPWeaver/dot_vim

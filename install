@@ -1,0 +1,23 @@
+DOTFILES="https://github.com/CPWeaver/dotfiles.git"
+CMDS="git vim"
+
+# Check for necessary commands
+for cmd in $CMDS; do
+  hash $cmd >/dev/null 2>&1 || {
+    echo "$cmd command not found. Please install $cmd."
+    exit 1
+  }
+done
+
+# Install Homeshick
+echo "Installing Homeshick to manage dotfiles..."
+git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+# Install dotfiles
+homeshick clone $DOTFILES
+homeshick symlink dotfiles
+
+# Install dot_vim + vundle
+cd $HOME/.vim
+./install

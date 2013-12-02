@@ -1,0 +1,8 @@
+#alias vi='gvim'
+alias sa='source ~/.bash_aliases'
+alias vb='vi ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias va='vi ~/.bash_aliases'
+alias sl='ls'
+alias h='history'
+alias mat='MemoryAnalyzer -data temp/mat -vmargs -Xmx6g'

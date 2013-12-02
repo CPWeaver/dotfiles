@@ -1,0 +1,80 @@
+#!/bin/bash
+
+hash brew >/dev/null 2>&1 || {
+  echo "Installing Homebrew..."
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+}
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+# Install GNU core utilities (those that come with OS X are outdated)
+brew install coreutils
+echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
+
+# Install Bash 4
+brew install bash
+brew install bash-completion
+# Make Brew's bash the default shell
+sudo su - root -c 'echo "/usr/local/bin/bash\n" >> /etc/shells'
+chsh -s /usr/local/bin/bash
+
+# Install wget with IRI support
+brew install wget --enable-iri
+
+# Install more recent versions of some OS X tools
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
+brew tap josegonzalez/homebrew-php
+
+# Applications distributed as binaries
+brew tap phinze/homebrew-cask
+brew install brew-cask
+brew cask install adium
+brew cask install caffeine
+brew cask install firefox
+brew cask install google-chrome
+brew cask install google-drive
+brew cask install iterm2
+brew cask install p4merge
+brew cask install sourcetree
+
+# Install utils
+brew install ack
+brew install fasd
+brew install cmake
+brew install git
+brew install git-flow
+brew install grc
+brew install jsl
+brew install lynx
+brew install multimarkdown
+brew install node
+brew install rename
+brew install the_silver_searcher
+brew install tmux
+brew install tree
+
+brew install macvim --override-system-vim
+
+# Install Maven
+brew install maven
+# Add Maven to the OS X environment
+defaults write ~/.MacOSX/environment.plist M2_HOME `brew --prefix maven`/libexec
+defaults write ~/.MacOSX/environment.plist M2 `brew --prefix maven`/libexec/bin
+
+# Install MySQL
+brew install mysql
+unset TMPDIR
+mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+
+# Link apps to the Applications folder
+brew linkapps
+
+# Remove outdated versions from the cellar
+brew cleanup

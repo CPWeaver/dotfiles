@@ -1,0 +1,49 @@
+
+function tt {
+  (
+    cd /usr/local/tomcat/logs
+    tail -n 400 -F $@
+  )
+}
+
+# chris custom functions
+function c () {
+   i=1
+   while [ $i -le $1 ]
+   do
+      cd ../
+      i=$[$i+1];
+   done
+}
+
+
+function fc () { 
+   find ~/dev/conference-center/src -type f -print0 2> /dev/null | xargs -0 grep -e $@
+}
+
+function ff () { 
+   fc $@ | cut -d: -f1 | uniq | nl
+ }
+
+function gc () {
+   line=$1
+   shift;
+   file=`ff $@ | sed -e "${line}q;d" | cut -f2`
+   echo "LINE: $line FILE: $file"
+   grep -C 5 "$@" $file
+}
+
+function jarGrep () {
+   for jar in `find . -name "*.jar"`
+   do
+      jar tvf $jar | grep $@
+      if [ $? == 0 ]; then
+         echo $jar
+      fi
+   done
+}
+
+function sx () {
+   sudo env DISPLAY="${DISPLAY}" XAUTHORITY=~/.XAuthority $@
+}
+

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pushd /home/cweaver/.vim/
+rm tags
+ctags -R -f tags /home/cweaver/dev/cc/conference-center/src /home/cweaver/dev/cc/cc-services/src
+popd
+

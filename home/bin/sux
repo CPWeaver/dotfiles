@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#shift
+sudo -i env DISPLAY="$DISPLAY" XAUTHORITY="${XAUTHORITY-$HOME/.Xauthority}" $@

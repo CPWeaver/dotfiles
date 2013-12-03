@@ -1,0 +1,3 @@
+#!/bin/bash
+
+watch -n 1 'psql readytalk tomcat -c "select backend_start, current_query from pg_stat_activity;" | grep -v IDLE; ps auxww | grep ^postgres | grep -v /usr'

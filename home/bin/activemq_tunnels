@@ -1,0 +1,5 @@
+#!/bin/bash
+ssh -fN -L 0.0.0.0:8888:lax11.ecovate.com:8161 laxinf2.ecovate.com
+ssh -fN -L 0.0.0.0:8889:lax12.ecovate.com:8161 laxinf2.ecovate.com
+ssh -fN -L 0.0.0.0:8880:laxcc3.ecovate.com:8161 laxinf2.ecovate.com
+ssh -fN -L 0.0.0.0:8881:laxcc4.ecovate.com:8161 laxinf2.ecovate.com

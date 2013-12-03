@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+
+ps -ef | perl -i -n -e 'if (m^\w*\s*(\d*).*\sXvnc.*^) {print "$1\n";}' | xargs kill
+

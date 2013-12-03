@@ -1,0 +1,5 @@
+#!/bin/bash
+ssh -fN -L 0.0.0.0:8888:forcc1.ecovate.com:8161 forinf2.ecovate.com
+ssh -fN -L 0.0.0.0:8889:forcc2.ecovate.com:8161 forinf2.ecovate.com
+ssh -fN -L 0.0.0.0:8880:forcc3.ecovate.com:8161 forinf2.ecovate.com
+ssh -fN -L 0.0.0.0:8881:forcc4.ecovate.com:8161 forinf2.ecovate.com

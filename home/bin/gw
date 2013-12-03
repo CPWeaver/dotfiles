@@ -1,1 +1,12 @@
-/home/cweaver/dev/gdub/src/gw.sh
+#!/bin/sh
+D=$(pwd)
+G="gradlew"
+while [ ! -x "$D/$G" -a "$D" != "/" ]; do
+    D=$(dirname $D)
+done
+if [ ! -x "$D/$G" ]; then
+    echo "No Gradle found in current or parent directories!"
+    exit 1
+fi
+echo "Run Gradle $D/$G ..."
+exec "$D/$G" "$@"

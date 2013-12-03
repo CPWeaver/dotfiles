@@ -1,0 +1,36 @@
+[user]
+  name = Chris Weaver
+  email = chris.weaver@readytalk.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+#  added = yellow
+#  changed = green
+  untracked = yellow
+[merge]
+#   external = git-meld
+  tool = meld
+
+[alias]
+  br = branch
+  st = status
+  ci = commit
+  co = checkout
+  di = diff
+  lg = log --graph --abbrev-commit
+  llg = log --graph --pretty=oneline --abbrev-commit --decorate
+  llga = log --graph --pretty=oneline --abbrev-commit --decorate --all
+  dt = difftool -t meld -y
+  so = remote show origin
+  mt = mergetool -t meld

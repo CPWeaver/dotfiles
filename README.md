@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-My .files for OS X, Linux, and Windows
+My .files for OS X and Linux
 
 and my [dot_vim][0] files
 

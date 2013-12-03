@@ -87,7 +87,7 @@ export DEPLOY_DIR=/home/cweaver/dev/deploy
 
 export GRAILS_HOME=/home/cweaver/grails/grails
 
-export PATH=/opt/firefox:/opt/thunderbird:$HOME/.rbenv/bin:$PATH:~/dev/deploy:/opt/mat:/opt/visualvm/visualvm_135/bin:/opt/jd-gui:$GRAILS_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/opt/firefox:/opt/thunderbird:$HOME/.rbenv/bin:$PATH:~/dev/deploy:/opt/mat:/opt/visualvm/visualvm_135/bin:/opt/jd-gui:$GRAILS_HOME/bin:$HOME/bin
 
 export LD_LIBRARY_PATH=/usr/lib32
 

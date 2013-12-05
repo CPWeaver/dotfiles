@@ -1,7 +1,9 @@
 #!/bin/bash
 
-pushd /home/cweaver/.vim/
-rm tags
+pushd ~/.vim/
+if [ -r tags ]; then
+  rm tags
+fi
 ctags -R -f tags /home/cweaver/dev/cc/conference-center/src /home/cweaver/dev/cc/cc-services/src
 popd
 

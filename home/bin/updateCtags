@@ -4,6 +4,6 @@ pushd ~/.vim/
 if [ -r tags ]; then
   rm tags
 fi
-ctags -R -f tags /home/cweaver/dev/cc/conference-center/src /home/cweaver/dev/cc/cc-services/src
+ctags -R -f tags ~/dev/cc/conference-center/src ~/dev/cc/cc-services/src ~/dev/cc/conference-center/integration-tests/src
 popd
 

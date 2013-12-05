@@ -80,6 +80,7 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 export PATH=/usr/local/sbin:${PATH}
 export PATH=/opt/firefox:${PATH}
 export PATH=/opt/thunderbird:${PATH}
+export PATH=/usr/local/Cellar/ctags/5.8/bin:${PATH}
 export PATH=$HOME/.rbenv/bin:${PATH}
 export PATH=/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/:${PATH}
 export PATH=${PATH}:/opt/mat

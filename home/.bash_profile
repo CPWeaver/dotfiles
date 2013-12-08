@@ -5,6 +5,21 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+export PATH=/usr/local/bin:${PATH}
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+export PATH=/usr/local/sbin:${PATH}
+export PATH=/opt/firefox:${PATH}
+export PATH=/opt/thunderbird:${PATH}
+export PATH=/usr/local/Cellar/ctags/5.8/bin:${PATH}
+export PATH=$HOME/.rbenv/bin:${PATH}
+export PATH=/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/:${PATH}
+export PATH=${PATH}:/opt/mat
+export PATH=${PATH}:/opt/visualvm/visualvm_135/bin
+export PATH=${PATH}:/opt/jd-gui
+export PATH=${PATH}:$GRAILS_HOME/bin
+export PATH=${PATH}:$HOME/bin
+
+
 # Load the shell dotfiles, and then some:
 # # * ~/.path can be used to extend `$PATH`.
 # # * ~/.extra can be used for other settings you don't want to commit.
@@ -44,7 +59,6 @@ HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoreboth
 
-
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -74,21 +88,6 @@ fi
 export DEPLOY_DIR=/home/cweaver/dev/deploy
 
 export GRAILS_HOME=/home/cweaver/grails/grails
-
-export PATH=/usr/local/bin:${PATH}
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
-export PATH=/usr/local/sbin:${PATH}
-export PATH=/opt/firefox:${PATH}
-export PATH=/opt/thunderbird:${PATH}
-export PATH=/usr/local/Cellar/ctags/5.8/bin:${PATH}
-export PATH=$HOME/.rbenv/bin:${PATH}
-export PATH=/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/:${PATH}
-export PATH=${PATH}:/opt/mat
-export PATH=${PATH}:/opt/visualvm/visualvm_135/bin
-export PATH=${PATH}:/opt/jd-gui
-export PATH=${PATH}:$GRAILS_HOME/bin
-export PATH=${PATH}:$HOME/bin
-
 export LD_LIBRARY_PATH=/usr/lib32
 
 export GRADLE_OPTS="-Xmx1024m -Dorg.gradle.daemon=true"

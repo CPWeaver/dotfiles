@@ -1,4 +1,5 @@
 #alias vi='gvim'
+alias vi='vim'
 alias sa='source ~/.bash_aliases'
 alias vb='vi ~/.bashrc'
 alias sb='source ~/.bashrc'

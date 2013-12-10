@@ -49,6 +49,10 @@ if [ -r /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 if [ -r "$HOME/.homesick/repos/homeshick/homeshick.sh" ]; then
   source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fi

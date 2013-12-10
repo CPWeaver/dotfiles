@@ -42,7 +42,7 @@ echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH.
 
 # Install Bash 4
 brewInstall bash
-brewInstall bash-completion
+brewInstall bash-completion2
 # Make Brew's bash the default shell
 sudo su - root -c 'echo "/usr/local/bin/bash\n" >> /etc/shells'
 chsh -s /usr/local/bin/bash

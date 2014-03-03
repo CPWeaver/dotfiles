@@ -18,12 +18,12 @@ function brewInstall() {
 
 function caskInstall() {
   brew cask list | grep "^$1$" > /dev/null 2>&1
-  if [ $? -ne 0 ]; then
+  #if [ $? -ne 0 ]; then
     echo "Installing $1..."
     brew cask install $1
-  else
-    echo "Skipping $1 (already installed)"
-  fi
+  #else
+    #echo "Skipping $1 (already installed)"
+  #fi
 }
 
 # Make sure we’re using the latest Homebrew
@@ -73,6 +73,7 @@ caskInstall iterm2
 #caskInstall sourcetree
 caskInstall macvim
 caskInstall keepassx
+caskInstall xquartz
 
 # Install utils
 #brewInstall ack

@@ -4,8 +4,11 @@
 # A big thanks to \amethyst on Freenode
 # Shamelessly ripped off from https://github.com/gf3/dotfiles
 
-if [[ $COLORTERM = gnome-* && $TERM = xterm ]]  && infocmp gnome-256color >/dev/null 2>&1; then export TERM=gnome-256color
-elif [[ $TERM != dumb ]] && infocmp xterm-256color >/dev/null 2>&1; then export TERM=xterm-256color
+# Don't change TERM variable if it's already colorized. This plays nice with tmux (screen-256color)
+if ! echo $TERM | grep 256 >/dev/null 2>&1; then
+  if [[ $COLORTERM = gnome-* && $TERM = xterm ]]  && infocmp gnome-256color >/dev/null 2>&1; then export TERM=gnome-256color
+  elif [[ $TERM = xterm ]] && infocmp xterm-256color >/dev/null 2>&1; then export TERM=xterm-256color
+  fi
 fi
 
 if tput setaf 1 &> /dev/null; then

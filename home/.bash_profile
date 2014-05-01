@@ -23,7 +23,7 @@ export PATH=${PATH}:$HOME/bin
 # Load the shell dotfiles, and then some:
 # # * ~/.path can be used to extend `$PATH`.
 # # * ~/.extra can be used for other settings you don't want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{path,bash_prompt,exports,aliases,bash_functions,extra}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -84,11 +84,16 @@ if [ -r $HUE_SCRIPT ]; then
   eval "$($HUE_SCRIPT init -)"
 fi
 
-# init rbenv if it exists
-if [ type rbenv >/dev/null 2>&1 ]; then
+if command_exists rbenv ; then
   eval "$(rbenv init -)" 
 fi
 
+# init nvm if it exists
+if command_exists brew && command_exists nvm ; then
+  source $(brew --prefix nvm)/nvm.sh
+fi
+
+source $(brew --prefix nvm)/nvm.sh
 
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/home/cweaver/dev/deploy

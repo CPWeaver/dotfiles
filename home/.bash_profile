@@ -93,8 +93,6 @@ if command_exists brew && command_exists nvm ; then
   source $(brew --prefix nvm)/nvm.sh
 fi
 
-source $(brew --prefix nvm)/nvm.sh
-
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/home/cweaver/dev/deploy
 

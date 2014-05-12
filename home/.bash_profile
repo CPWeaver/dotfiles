@@ -89,7 +89,7 @@ if command_exists rbenv ; then
 fi
 
 # init nvm if it exists
-if command_exists brew && command_exists nvm ; then
+if command_exists brew ; then
   source $(brew --prefix nvm)/nvm.sh
 fi
 

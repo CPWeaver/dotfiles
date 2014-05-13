@@ -30,3 +30,8 @@
 --regex-groovy=/^[ \t][abstract ( \t)][(private|public) ( \t)]class[ \t]+([A-Za-z0-9_]+)[ \t]/\1/c,class,classes/
 --regex-groovy=/^[ \t][abstract ( \t)][(private|public) ( \t)]enum[ \t]+([A-Za-z0-9_]+)[ \t]/\1/c,class,classes/
 
+--langdef=bash
+--langmap=bash:.sh
+--regex-bash=/^[ \t][(function)( \t)][A-Za-z0-9<>]+[ \t]+([A-Za-z0-9]+)[ \t](.)[ \t]{/\1/f,function,functions/
+--regex-bash=/^[ \t]*local[ \t]+([A-Za-z0-9_]+)[ \t]/\1/v,private,private variables/
+

@@ -91,7 +91,12 @@ fi
 # init nvm if it exists
 if command_exists brew ; then
   source $(brew --prefix nvm)/nvm.sh
+else
+  if command_exists "$HOME/.nvm/nvm.sh" ; then
+    source $HOME/.nvm/nvm.sh
+  fi
 fi
+
 
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/home/cweaver/dev/deploy

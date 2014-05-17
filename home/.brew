@@ -74,6 +74,7 @@ caskInstall iterm2
 caskInstall macvim
 caskInstall keepassx
 caskInstall xquartz
+caskInstall evernote
 
 # Install utils
 #brewInstall ack

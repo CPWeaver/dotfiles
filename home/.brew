@@ -95,6 +95,7 @@ brewInstall reattach-to-user-namespace
 #brewInstall tree
 brewInstall ant
 brewInstall postgresql
+brewInstall terminal-notifier
 
 #brewInstall macvim --override-system-vim
 

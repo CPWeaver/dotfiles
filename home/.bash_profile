@@ -19,6 +19,9 @@ export PATH=${PATH}:/opt/jd-gui
 export PATH=${PATH}:$GRAILS_HOME/bin
 export PATH=${PATH}:$HOME/bin
 
+export AWS_ACCESS_KEY_ID="AKIAIMSPCZN52FCACTHA"
+export AWS_SECRET_ACCESS_KEY="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"
+
 
 # Load the shell dotfiles, and then some:
 # # * ~/.path can be used to extend `$PATH`.

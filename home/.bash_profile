@@ -29,7 +29,7 @@ unset file
 
 # Setup or bind to running ssh agent 
 if [ -r ~/.ssh/ssh-agent-setup ]; then
-  . $HOME/.ssh/ssh-agent-setup
+  . "$HOME/.ssh/ssh-agent-setup"
 fi
 
 # Alias definitions.
@@ -49,8 +49,8 @@ if [ -r /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 if type brew >/dev/null 2>&1; then
-  if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-    . $(brew --prefix)/share/bash-completion/bash_completion
+  if [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+    . "$(brew --prefix)/share/bash-completion/bash_completion"
   fi
 fi
 
@@ -90,12 +90,18 @@ fi
 # init nvm if it exists
 if command_exists brew ; then
   export NVM_DIR=~/.nvm
-  source $(brew --prefix nvm)/nvm.sh
+  source "$(brew --prefix nvm)/nvm.sh"
 else
   if command_exists "$HOME/.nvm/nvm.sh" ; then
     export NVM_DIR=~/.nvm
-    source $HOME/.nvm/nvm.sh
+    source "$HOME/.nvm/nvm.sh"
   fi
+fi
+
+# init virtualenv if it exists
+export VIRTUALENV_WRAPPER=~/.local/bin/virtualenvwrapper.sh
+if [ -r $VIRTUALENV_WRAPPER ]; then
+  source $VIRTUALENV_WRAPPER
 fi
 
 

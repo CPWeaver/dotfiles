@@ -113,5 +113,7 @@ export LD_LIBRARY_PATH=/usr/lib32
 
 export GRADLE_OPTS="-Xmx1024m -Dorg.gradle.daemon=true"
 
+export EDITOR=vim
+
 #export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
 

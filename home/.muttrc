@@ -1,0 +1,61 @@
+#Me
+set realname = "Chris Weaver"
+
+#LDAP Address Book
+set query_command="$HOME/bin/mutt-ldap.pl '%s'"
+bind editor "\t" complete-query
+
+# SMTP
+set from="Chris Weaver <chris.weaver@readytalk.com>"
+set record=$HOME/mail/readytalk/Sent\ Items
+set smtp_url=smtp://chris.weaver@wynent02.readytalk.com
+set smtp_pass=$SMTP_PW
+set ssl_starttls = yes
+
+# For HTML Viewing
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
+alternative_order text/plain text/html
+
+# Maildir
+set mbox_type=Maildir
+set folder=$HOME/mail/readytalk
+mailboxes `echo -n "+ "; for file in ~/mail/readytalk/*; do box=$(basename "$file"); echo -n "\"+$box\" "; done`
+set spoolfile=+/INBOX
+set header_cache=~/.cache/mutt
+
+# Sidebar
+set sidebar_visible=yes
+set sidebar_delim  = '  |'
+color sidebar_new yellow default
+
+bind index,pager J sidebar-next
+bind index,pager K sidebar-prev
+bind index,pager L sidebar-open
+
+bind pager j next-line
+bind pager k previous-line
+
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+
+# General shortcuts
+bind index gg first-entry
+bind index G last-entry
+bind index u sync-mailbox
+
+
+
+
+# Macros
+
+# Mark all Read
+
+# faster? untag new messages, select old but unread, untag them, then get rid of all tags
+macro index <esc>M "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "Mark all messages as read"
+# Works but slow because of tag regex
+# macro index M "T.*\n;WN" "Mark all messages as read"
+
+# Move to a folder -- tagged or selected
+macro index X ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro index S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Support\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"

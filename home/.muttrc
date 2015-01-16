@@ -8,6 +8,7 @@ bind editor "\t" complete-query
 # SMTP
 set from="Chris Weaver <chris.weaver@readytalk.com>"
 set record=$HOME/mail/readytalk/Sent\ Items
+set postponed=$HOME/mail/readytalk/Drafts
 set smtp_url=smtp://chris.weaver@wynent02.readytalk.com
 set smtp_pass=$SMTP_PW
 set ssl_starttls = yes
@@ -27,21 +28,28 @@ set header_cache=~/.cache/mutt
 # Sidebar
 set sidebar_visible=yes
 set sidebar_delim  = '  |'
-color sidebar_new yellow default
+set sidebar_width=24
+#color sidebar_new yellow default
 
-bind index,pager J sidebar-next
-bind index,pager K sidebar-prev
+bind index J sidebar-next
+bind index K sidebar-prev
 bind index,pager L sidebar-open
 
 bind pager j next-line
 bind pager k previous-line
+bind pager J next-undeleted
+bind pager K previous-undeleted
 
 macro index b '<enter-command>toggle sidebar_visible<enter>'
 macro pager b '<enter-command>toggle sidebar_visible<enter>'
 
+# Colors
+source $HOME/.mutt/solarized
+
+
 # General shortcuts
-bind index gg first-entry
-bind index G last-entry
+#bind index gg first-entry
+#bind index G last-entry
 bind index u sync-mailbox
 
 
@@ -57,5 +65,6 @@ macro index <esc>M "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "Mark all messages a
 # macro index M "T.*\n;WN" "Mark all messages as read"
 
 # Move to a folder -- tagged or selected
-macro index X ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
-macro index S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Support\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro index,pager X ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro index,pager S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Support\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+

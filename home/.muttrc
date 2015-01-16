@@ -21,7 +21,7 @@ alternative_order text/plain text/html
 # Maildir
 set mbox_type=Maildir
 set folder=$HOME/mail/readytalk
-mailboxes `echo -n "+ "; for file in ~/mail/readytalk/*; do box=$(basename "$file"); echo -n "\"+$box\" "; done`
+mailboxes `$HOME/.mutt/list_mailboxes.sh`
 set spoolfile=+/INBOX
 set header_cache=~/.cache/mutt
 

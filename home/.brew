@@ -58,6 +58,10 @@ brewInstall ctags
 #brewInstall homebrew/dupes/grep
 #brew tap josegonzalez/homebrew-php
 
+# Homebrew doesn't include mutt patches
+brew tap flabbergast/muttpatched
+brew install mutt-patched --with-sidebar-patch
+
 # Applications distributed as binaries
 brew tap phinze/homebrew-cask
 brewInstall brew-cask
@@ -96,6 +100,7 @@ brewInstall reattach-to-user-namespace
 brewInstall ant
 brewInstall postgresql
 brewInstall terminal-notifier
+brewInstall isync
 
 #brewInstall macvim --override-system-vim
 

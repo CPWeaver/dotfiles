@@ -16,7 +16,7 @@ set ssl_starttls = yes
 # For HTML Viewing
 set mailcap_path = ~/.mutt/mailcap
 auto_view text/html
-alternative_order text/plain text/html
+#alternative_order text/plain text/html
 
 # Maildir
 set mbox_type=Maildir
@@ -26,7 +26,8 @@ set spoolfile=+/INBOX
 set header_cache=~/.cache/mutt
 
 # Auto check for new mail
-set timeout=30
+set timeout = 3
+set mail_check = 0
 
 # Sidebar
 set sidebar_visible=yes

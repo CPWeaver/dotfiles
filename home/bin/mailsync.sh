@@ -9,8 +9,14 @@ do
     echo "Error: $code"
     exit 1
   else
-    echo "Success!"
+    echo -n "Indexing..."
     notmuch new
+    if [ $code -ne 0 ]; then
+      echo "Error: $code"
+      exit 1
+    else
+      echo "Success!"
+    fi
   fi
   date
   sleep 4m

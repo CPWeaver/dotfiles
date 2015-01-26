@@ -6,3 +6,4 @@ do
   box=$(basename "$file")
   echo -n "\"+$box\" "
 done
+echo -n "\"+temporary/search\" "

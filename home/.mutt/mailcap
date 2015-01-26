@@ -1,2 +1,3 @@
 text/html; elinks -dump -dump-color-mode 3; copiousoutput;
 image/*; mutt_bgrun gwenview %s
+application/pdf; mutt_bgrun okular %s

@@ -50,6 +50,9 @@ macro pager b '<enter-command>toggle sidebar_visible<enter>'
 # Colors
 source $HOME/.mutt/solarized
 
+# Sort
+set sort="threads"
+
 
 # General shortcuts
 #bind index gg first-entry

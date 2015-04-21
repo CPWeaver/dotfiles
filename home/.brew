@@ -61,6 +61,7 @@ brewInstall ctags
 # Homebrew doesn't include mutt patches
 brew tap flabbergast/muttpatched
 brew install mutt-patched --with-sidebar-patch
+brew install notmuch
 
 # Applications distributed as binaries
 brew tap phinze/homebrew-cask
@@ -101,6 +102,7 @@ brewInstall ant
 brewInstall postgresql
 brewInstall terminal-notifier
 brewInstall isync
+brewInstall elinks
 
 #brewInstall macvim --override-system-vim
 

@@ -22,6 +22,7 @@ MaildirStore readytalk-local
 # The trailing "/" is important
 Path ~/mail/readytalk/
 Inbox ~/mail/readytalk/INBOX
+SubFolders Verbatim
 
 Channel readytalk
 Master :readytalk-remote:

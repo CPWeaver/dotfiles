@@ -28,7 +28,7 @@ Channel readytalk
 Master :readytalk-remote:
 Slave :readytalk-local:
 # Exclude everything under the internal [Gmail] folder, except the interesting folders
-Patterns * !Calendar !Contacts !Old*
+Patterns * !Calendar !Contacts !Old* !temporary*
 # Or include everything
 #Patterns *
 # Automatically create missing mailboxes, both locally and on the server

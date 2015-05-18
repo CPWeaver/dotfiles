@@ -1,3 +1,5 @@
 text/html; elinks -dump -dump-color-mode 3; copiousoutput;
 image/*; mutt_bgrun gwenview %s
 application/pdf; mutt_bgrun okular %s
+text/calendar; mutt-ical.py -i -e "chris.weaver@readytalk.com" %s
+application/ics; mutt-ical.py -i -e "chris.weaver@readytalk.com" %s

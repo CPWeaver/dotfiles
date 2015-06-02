@@ -102,6 +102,12 @@ fi
 export VIRTUALENV_WRAPPER=~/.local/bin/virtualenvwrapper.sh
 if [ -r $VIRTUALENV_WRAPPER ]; then
   source $VIRTUALENV_WRAPPER
+else 
+  export VIRTUALENV_WRAPPER=~/Library/Python/2.7/bin/virtualenvwrapper.sh
+  if [ -r $VIRTUALENV_WRAPPER ]; then
+    export PATH=$PATH:${HOME}/Library/Python/2.7/bin
+    source $VIRTUALENV_WRAPPER
+  fi
 fi
 
 

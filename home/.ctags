@@ -1,12 +1,35 @@
+--langdef=Clojure
+--langmap=Clojure:.clj
+--regex-clojure=/\([ \t]*create-ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+--regex-clojure=/\([ \t]*def[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/d,definition/
+--regex-clojure=/\([ \t]*defn-?[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/f,function/
+--regex-clojure=/\([ \t]*defmacro[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/m,macro/
+--regex-clojure=/\([ \t]*definline[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/i,inline/
+--regex-clojure=/\([ \t]*defmulti[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/a,multimethod definition/
+--regex-clojure=/\([ \t]*defmethod[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/b,multimethod instance/
+--regex-clojure=/\([ \t]*defonce[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/c,definition (once)/
+--regex-clojure=/\([ \t]*defstruct[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/s,struct/
+--regex-clojure=/\([ \t]*intern[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/v,intern/
+--regex-clojure=/\([ \t]*ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+
+
 --langdef=coffee
 --langmap=coffee:.coffee
---regex-coffee=/(^|=[ \t])*class ([A-Za-z_][A-Za-z0-9_]+\.)*([A-Za-z_][A-Za-z0-9_]+)( extends ([A-Za-z][A-Za-z0-9_.]*)+)?$/\3/c,class/
---regex-coffee=/^[ \t]*(module\.)?(exports\.)?@?(([A-Za-z][A-Za-z0-9_.]*)+):.*[-=]>.*$/\3/m,method/
---regex-coffee=/^[ \t]*(module\.)?(exports\.)?(([A-Za-z][A-Za-z0-9_.]*)+)[ \t]*=.*[-=]>.*$/\3/f,function/
---regex-coffee=/^[ \t]*(([A-Za-z][A-Za-z0-9_.]*)+)[ \t]*=[^->\n]*$/\1/v,variable/
---regex-coffee=/^[ \t]*@(([A-Za-z][A-Za-z0-9_.]*)+)[ \t]*=[^->\n]*$/\1/f,field/
---regex-coffee=/^[ \t]*@(([A-Za-z][A-Za-z0-9_.]*)+):[^->\n]*$/\1/f,static field/
---regex-coffee=/^[ \t]*(([A-Za-z][A-Za-z0-9_.]*)+):[^->\n]*$/\1/f,field/
+--regex-coffee=/\$scope[A-Za-z1-9._$]*\.([A-Za-z0-9._$]+)[ \t]*[:=]/\1/t,ng-scope-variable/
+--regex-coffee=/\.(constant|controller|decorator|factory|provider|service|value)[ \(]'([A-Za-z0-9._$]+)'/\2/n,ng-component/
+--regex-coffee=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*new[ \t]+Object\(/\1/o,object/
+--regex-coffee=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/o,object/
+--regex-coffee=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*new[ \t]+Array\(/\1/a,array/
+--regex-coffee=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/a,array/
+--regex-coffee=/([^= ]+)[ \t]*=[ \t]*[^""]'[^'']*/\1/s,string/
+--regex-coffee=/([^= ]+)[ \t]*=[ \t]*[^'']"[^""]*/\1/s,string/
+--regex-coffee=/(^|=)[ \t]*class ([A-Za-z_][A-Za-z0-9_]+\.)*([A-Za-z_][A-Za-z0-9_]+)( extends ([A-Za-z][A-Za-z0-9_.]*)+)?$/\3/c,class/
+--regex-coffee=/^[ \t]*(module\.)?(exports\.)?@?(([A-Za-z_][A-Za-z0-9_.]*)+):.*[-=]>.*$/\3/m,method/
+--regex-coffee=/^[ \t]*(module\.)?(exports\.)?(([A-Za-z_][A-Za-z0-9_.]*)+)[ \t]*=.*[-=]>.*$/\3/f,function/
+--regex-coffee=/^[ \t]*(([A-Za-z_][A-Za-z0-9_.]*)+)[ \t]*=[^->\n]*$/\1/v,variable/
+--regex-coffee=/^[ \t]*@(([A-Za-z_][A-Za-z0-9_.]*)+)[ \t]*=[^->\n]*$/\1/f,field/
+--regex-coffee=/^[ \t]*@(([A-Za-z_][A-Za-z0-9_.]*)+):[^->\n]*$/\1/f,static field/
+--regex-coffee=/^[ \t]*(([A-Za-z_][A-Za-z0-9_.]*)+):[^->\n]*$/\1/f,field/
 --regex-coffee=/((constructor|initialize):[ \t]*\()@(([A-Za-z][A-Za-z0-9_.]*)+)([ \t]*=[ \t]*[^,)]+)?/\3/f,field/
 --regex-coffee=/((constructor|initialize):[ \t]*\()@(([A-Za-z][A-Za-z0-9_.]*)+)([ \t]*=[ \t]*[^,)]+)?(,[ \t]*@(([A-Za-z][A-Za-z0-9_.]*)+)([ \t]*=[ \t]*[^,)]+)?){0}/\8/f,field/
 --regex-coffee=/((constructor|initialize):[ \t]*\()@(([A-Za-z][A-Za-z0-9_.]*)+)([ \t]*=[ \t]*[^,)]+)?(,[ \t]*@(([A-Za-z][A-Za-z0-9_.]*)+)([ \t]*=[ \t]*[^,)]+)?){1}/\8/f,field/
@@ -20,6 +43,10 @@
 --regex-coffee=/((constructor|initialize):[ \t]*\()@(([A-Za-z][A-Za-z0-9_.]*)+)([ \t]*=[ \t]*[^,)]+)?(,[ \t]*@(([A-Za-z][A-Za-z0-9_.]*)+)([ \t]*=[ \t]*[^,)]+)?){9}/\8/f,field/
 
 
+--langdef=cucumber
+--langmap=cucumber:.feature
+--regex-cucumber=/Scenario[ \tA-Za-z]*: (.+)/\1/d,definition/
+
 
 --langdef=groovy
 --langmap=groovy:.groovy
@@ -30,8 +57,11 @@
 --regex-groovy=/^[ \t][abstract ( \t)][(private|public) ( \t)]class[ \t]+([A-Za-z0-9_]+)[ \t]/\1/c,class,classes/
 --regex-groovy=/^[ \t][abstract ( \t)][(private|public) ( \t)]enum[ \t]+([A-Za-z0-9_]+)[ \t]/\1/c,class,classes/
 
---langdef=bash
---langmap=bash:.sh
---regex-bash=/^[ \t][(function)( \t)][A-Za-z0-9<>]+[ \t]+([A-Za-z0-9]+)[ \t](.)[ \t]{/\1/f,function,functions/
---regex-bash=/^[ \t]*local[ \t]+([A-Za-z0-9_]+)[ \t]/\1/v,private,private variables/
 
+--langdef=less
+--langmap=less:.less
+--regex-less=/^[ \t]*\.([A-Za-z0-9_-]+)/\1/c,class,classes/
+--regex-less=/^[ \t]*#([A-Za-z0-9_-]+)/\1/i,id,ids/
+--regex-less=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+){/\1/t,tag,tags/
+--regex-less=/^[ \t]*@media[ \t]+([A-Za-z0-9_-]+)/\1/m,media,medias/
+--regex-less=/^[ \t]*@([A-Za-z0-9_-]+):/\1/v,var,variables/

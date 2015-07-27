@@ -34,3 +34,5 @@
   dt = difftool -t meld -y
   so = remote show origin
   mt = mergetool -t meld
+[push]
+	default = simple

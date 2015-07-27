@@ -4,10 +4,18 @@ command_exists () {
       #echo "command $1 status $?"
 }
 
-if command_exists open; then
-  open -W $1
+platform='unknown'
+unamestr=$(uname)
+if [[ "$unamestr" == 'Linux' ]]; then
+  platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+  platform='osx'
+fi
+
+if [[ $platform == 'osx' ]]; then
+  open -W "$1"
 else
-  if command_exists xdg-open ; then
-    xdg-open $1
+  if [[ $platform == 'linux' ]]; then
+    xdg-open "$1"
   fi
 fi

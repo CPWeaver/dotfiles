@@ -110,7 +110,6 @@ else
   fi
 fi
 
-
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/home/cweaver/dev/deploy
 
@@ -120,6 +119,8 @@ export LD_LIBRARY_PATH=/usr/lib32
 export GRADLE_OPTS="-Xmx1024m -Dorg.gradle.daemon=true"
 
 export EDITOR=vim
+
+export MAILDIR="$HOME/mail/readytalk"
 
 #export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
 

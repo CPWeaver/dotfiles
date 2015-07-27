@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # @(#) mutt_bgrun $Revision: 1.4 $
 
 #   mutt_bgrun - run an attachment viewer from mutt in the background
@@ -105,8 +105,12 @@ tmpfile="$tmpdir/${file##*/}"
 
 cp "$file" "$tmpfile"
 
-# Run the viewer in the background and delete the temporary files when done. 
+command_exists () {
+      type "$1" &> /dev/null ;
+      #echo "command $1 status $?"
+}
 
+# Run the viewer in the background and delete the temporary files when done. 
 (
     if command_exists dbus-launch; then
       export $(dbus-launch)

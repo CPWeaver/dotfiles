@@ -102,7 +102,8 @@ brewInstall ant
 brewInstall postgresql
 brewInstall terminal-notifier
 brewInstall isync
-brewInstall elinks
+
+brew install --devel elinks
 
 #brewInstall macvim --override-system-vim
 

@@ -18,6 +18,8 @@ set mailcap_path = ~/.mutt/mailcap
 auto_view text/html
 #alternative_order text/plain text/html
 
+auto_view image/jpeg
+
 # Maildir
 set mbox_type=Maildir
 set folder=$HOME/mail/readytalk
@@ -35,17 +37,15 @@ set sidebar_delim  = '  |'
 set sidebar_width=24
 #color sidebar_new yellow default
 
+#set pager="vim -u /usr/share/vim/vim73/macros/less.vim"
+set pager="less -R"
+set prompt_after=no
+
 bind index J sidebar-next
 bind index K sidebar-prev
 bind index,pager L sidebar-open
 
-bind pager j next-line
-bind pager k previous-line
-bind pager J next-undeleted
-bind pager K previous-undeleted
-
 macro index b '<enter-command>toggle sidebar_visible<enter>'
-macro pager b '<enter-command>toggle sidebar_visible<enter>'
 
 # Colors
 source $HOME/.mutt/solarized

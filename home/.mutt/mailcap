@@ -1,6 +1,7 @@
-#text/html; elinks -dump -dump-color-mode 3; copiousoutput;
-text/html; elinks -dump; copiousoutput;
-image/*; mutt_bgrun view_file.sh %s
+text/html; elinks -dump -dump-color-mode 4; copiousoutput;
+image/jpeg; mutt_bgrun view_file.sh %s; test=sh -c 'test $DISPLAY'
+image/jpeg; jp2a --colors --width=140 %s; copiousoutput;
+image/*; mutt_bgrun view_file.sh %s; test=sh -c 'test $DISPLAY'
 application/pdf; mutt_bgrun view_file.sh %s
 text/calendar; mutt-ical.py -i -e "chris.weaver@readytalk.com" %s
 application/ics; mutt-ical.py -i -e "chris.weaver@readytalk.com" %s

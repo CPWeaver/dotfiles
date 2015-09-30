@@ -1,0 +1,21 @@
+To compile VIM on debian:
+
+- basically, follow you complete me docs
+
+- install dependencies listed by youcompleteme compile docs
+- install checkinstall
+
+git clean -fdx
+
+make distclean; ./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config --enable-perlinterp --enable-luainterp --enable-cscope --enable-gui=gtk2 --prefix=/usr
+
+make -j 8 VIMRUNTIMEDIR=/usr/share/vim/vim74
+sudo checkinstall   # this makes it a debian package installation
+
+
+Packages to install:
+  checkinstall 
+  xclip (for tmux-yank)
+  tmux
+  the_silver_searcher
+  cmake

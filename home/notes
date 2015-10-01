@@ -19,3 +19,12 @@ Packages to install:
   tmux
   the_silver_searcher
   cmake
+  mutt
+  isync
+  notmuch
+  jp2a
+  elinks
+
+
+transform/translate, translate the y axis
+request animation frame -- instead of timeout

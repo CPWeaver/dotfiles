@@ -38,7 +38,8 @@ set sidebar_width=24
 #color sidebar_new yellow default
 
 #set pager="vim -u /usr/share/vim/vim73/macros/less.vim"
-set pager="less -R"
+set pager="$VIM_HOME/macros/less.sh -c AnsiEsc -c 'set nolist'"
+#set pager="less -R"
 set prompt_after=no
 
 bind index J sidebar-next

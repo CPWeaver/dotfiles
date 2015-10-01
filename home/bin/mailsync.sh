@@ -3,7 +3,7 @@
 while true;
 do
   echo -n "Starting Sync..."
-  mbsync -q -a
+  mbsync -a
   code=$?
   if [ $code -ne 0 ]; then
     echo "Error: $code"

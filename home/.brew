@@ -62,6 +62,7 @@ brewInstall ctags
 brew tap flabbergast/muttpatched
 brew install mutt-patched --with-sidebar-patch
 brew install notmuch
+brew install jp2a
 
 # Applications distributed as binaries
 brew tap phinze/homebrew-cask
@@ -84,14 +85,13 @@ caskInstall evernote
 # Install utils
 #brewInstall ack
 #brewInstall fasd
-#brewInstall cmake
-#brewInstall git
+brewInstall cmake
+brewInstall git
 #brewInstall git-flow
 #brewInstall grc
 #brewInstall jsl
 #brewInstall lynx
 #brewInstall multimarkdown
-#brewInstall node
 brewInstall nvm
 #brewInstall rename
 brewInstall the_silver_searcher

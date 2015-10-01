@@ -110,6 +110,13 @@ else
   fi
 fi
 
+export VIM_HOME=/opt/homebrew-cask/Caskroom/macvim/7.4.74/MacVim-snapshot-74/Contents/Resources/vim/runtime
+if [ ! -d $VIM_HOME ]; then
+  export VIM_HOME=/usr/share/vim/vim74
+fi
+
+
+
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/home/cweaver/dev/deploy
 

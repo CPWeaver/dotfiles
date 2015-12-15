@@ -1,20 +1,22 @@
 #!/usr/bin/perl
 
-my %cols = {};
-my %keys = {};
+my %colByStat = {};
+my %statByCol = {};
 
 while (<>) {
   chomp;
-  my ($day, $time, $level, $thread, $class, $stat, $ssrc, $value) = split / /;
-  my $key = "$stat" . "_" . "$ssrc";
-  if (not exists $cols{$key}) {
-    $cols{$key} = keys(%cols);
-    $keys{$cols{$key}} = $key;
+  my ($day, $time, $level, $thread, $class, $marker, $statsString) = split / /;
+  my @stats = split /,/, $statsString;
+  foreach my $stat (@stats) {
+    my ($statKey, $statValue) = split /:/, $stat;
+    if (not exists $colByStat{$statKey}) {
+      $colByStat{$statKey} = keys(%colByStat);
+      $statByCol{$colByStat{$statKey}} = $statKey;
+    }
   }
 }
 
-print "time,name";
-for (my $k=1; $k < keys(%keys); $k++) {
-  print ",";
-  print $keys{$k};
+print "time";
+for (my $k=1; $k < keys(%statByCol); $k++) {
+  print ",$statByCol{$k}";
 }

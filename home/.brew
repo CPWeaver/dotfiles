@@ -2,7 +2,7 @@
 
 hash brew >/dev/null 2>&1 || {
   echo "Installing Homebrew..."
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
 function brewInstall() {
@@ -42,6 +42,7 @@ echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH.
 
 # Install Bash 4
 brewInstall bash
+brew tap homebrew/versions
 brewInstall bash-completion2
 # Make Brew's bash the default shell
 sudo su - root -c 'echo "/usr/local/bin/bash\n" >> /etc/shells'
@@ -59,14 +60,13 @@ brewInstall ctags
 #brew tap josegonzalez/homebrew-php
 
 # Homebrew doesn't include mutt patches
-brew tap flabbergast/muttpatched
-brew install mutt-patched --with-sidebar-patch
+brew tap kevwil/homebrew-patches
+brew install kevwil/homebrew-patches/mutt --with-sidebar-patch
 brew install notmuch
 brew install jp2a
 
 # Applications distributed as binaries
-brew tap phinze/homebrew-cask
-brewInstall brew-cask
+brew tap caskroom/cask
 #caskInstall(adium)
 
 caskInstall adium

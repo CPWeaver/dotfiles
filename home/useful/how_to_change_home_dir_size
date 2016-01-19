@@ -1,0 +1,36 @@
+$ sudo su -
+
+vgdisplay | grep Alloc <== show unallocated space
+
+root@mklich:~# lvs
+  LV           VG   Attr   LSize   Origin Snap%  Move Log Copy%  Convert
+  home         vg1  -wi-ao 100.00g
+  pbuilder     vg1  -wi-ao  20.00g
+  squeeze-root vg1  -wi-ao  15.00g
+  swap         vg1  -wi-ao   4.00g
+  xennfs       vg1  -wi-a- 100.00g
+
+root@mklich:~# lvresize -L 150G -t vg1/home    # drop the -t flag to do it for real
+  Test mode: Metadata will NOT be updated.
+  Extending logical volume home to 150.00 GiB
+  Logical volume home successfully resized
+
+root@mklich:~# resize2fs /dev/mapper/vg1-home
+resize2fs 1.41.12 (17-May-2010)
+Filesystem at /dev/mapper/vg1-home is mounted on /home; on-line resizing required
+old desc_blocks = 1, new_desc_blocks = 2
+Performing an on-line resize of /dev/mapper/vg1-home to 5242880 (4k) blocks.
+The filesystem on /dev/mapper/vg1-home is now 5242880 blocks long.
+
+# note, doesn't work for xfs type, then you need "xfs_growfs"
+dobra:root# xfs_growfs /dev/mapper/vg0-varlv
+meta-data=/dev/mapper/vg0-varlv  isize=256    agcount=4, agsize=327680 blks
+         =                       sectsz=4096  attr=2, projid32bit=1
+         =                       crc=0        finobt=0
+data     =                       bsize=4096   blocks=1310720, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=0
+log      =internal               bsize=4096   blocks=2560, version=2
+         =                       sectsz=4096  sunit=1 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+data blocks changed from 1310720 to 7864320

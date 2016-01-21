@@ -110,7 +110,7 @@ else
   fi
 fi
 
-export VIM_HOME=/opt/homebrew-cask/Caskroom/macvim/7.4-85/MacVim.app/Contents/Resources/vim/runtime/
+export VIM_HOME=/usr/local/Cellar/neovim/0.1.1/share/nvim/runtime
 if [ ! -d $VIM_HOME ]; then
   export VIM_HOME=/usr/share/vim/vim74
 fi

@@ -13,6 +13,15 @@ make -j 8 VIMRUNTIMEDIR=/usr/share/vim/vim74
 sudo checkinstall   # this makes it a debian package installation
 
 
+# To install neovim on debian
+make clean; rm -fr .deps build
+make install
+make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX:PATH=$HOME/neovim"
+
+
+
+
+
 Packages to install:
   checkinstall 
   xclip (for tmux-yank)

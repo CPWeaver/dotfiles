@@ -37,3 +37,7 @@ Packages to install:
 
 transform/translate, translate the y axis
 request animation frame -- instead of timeout
+
+
+heap dump
+jmap -dump:format=b,file=jicofo.jprof <pid>

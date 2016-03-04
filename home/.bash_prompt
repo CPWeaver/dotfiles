@@ -53,7 +53,13 @@ parse_git_branch () {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="\[${BOLD}${GREEN}\]\u\[$WHITE\]@\[$ORANGE\]\h\[$WHITE\]:\[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$RED\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+show_environment_key () {
+  if [[ -n $ENVIRONMENT_KEY ]]; then
+    echo -n " (${ENVIRONMENT_KEY}) "
+  fi
+}
+
+PS1="\[${BOLD}${GREEN}\]\u\[$WHITE\]@\[$ORANGE\]\h\[$WHITE\]:\[$YELLOW\]\w\[$ORANGE\]$(show_environment_key)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$RED\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 
 # OLD PROMPT STUFF (for reference only)
 

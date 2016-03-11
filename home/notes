@@ -15,8 +15,12 @@ sudo checkinstall   # this makes it a debian package installation
 
 # To install neovim on debian
 make clean; rm -fr .deps build
-make install
-make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX:PATH=$HOME/neovim"
+make
+sudo make install
+
+# to install tmux
+./autogen.sh
+./configure && make
 
 
 

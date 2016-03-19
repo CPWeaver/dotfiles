@@ -26,6 +26,8 @@ set folder=$HOME/mail/readytalk
 mailboxes `$HOME/.mutt/list_mailboxes.sh`
 set spoolfile=+/INBOX
 set header_cache=~/.cache/mutt
+set sleep_time=0
+set time_inc=200
 
 # Auto check for new mail
 set timeout = 3
@@ -37,9 +39,9 @@ set sidebar_delim  = '  |'
 set sidebar_width=24
 #color sidebar_new yellow default
 
-#set pager="vim -u /usr/share/vim/vim73/macros/less.vim"
-set pager="$VIM_HOME/macros/less.sh -c AnsiEsc -c 'set nolist'"
-#set pager="less -R"
+#set pager="vim -u $VIM_HOME/macros/less.vim"
+#set pager="$VIM_HOME/macros/less.sh -c AnsiEsc -c 'set nolist'"
+set pager="less -R"
 set prompt_after=no
 
 bind index J sidebar-next

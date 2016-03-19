@@ -13,6 +13,19 @@ make -j 8 VIMRUNTIMEDIR=/usr/share/vim/vim74
 sudo checkinstall   # this makes it a debian package installation
 
 
+# To install neovim on debian
+make clean; rm -fr .deps build
+make
+sudo make install
+
+# to install tmux
+./autogen.sh
+./configure && make
+
+
+
+
+
 Packages to install:
   checkinstall 
   xclip (for tmux-yank)
@@ -33,3 +46,6 @@ request animation frame -- instead of timeout
 How to update mythtv symlinks:
   503  cd /usr/share/mythtv/contrib/user_jobs/
   505  ./mythlink.pl --format "%T/Season %ss/Episode %ep - %S" --path /middleearth/dvr/dvr/nas
+
+heap dump
+jmap -dump:format=b,file=jicofo.jprof <pid>

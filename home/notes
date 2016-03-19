@@ -28,3 +28,8 @@ Packages to install:
 
 transform/translate, translate the y axis
 request animation frame -- instead of timeout
+
+
+How to update mythtv symlinks:
+  503  cd /usr/share/mythtv/contrib/user_jobs/
+  505  ./mythlink.pl --format "%T/Season %ss/Episode %ep - %S" --path /middleearth/dvr/dvr/nas

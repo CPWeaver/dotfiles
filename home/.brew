@@ -60,8 +60,8 @@ brewInstall ctags
 #brew tap josegonzalez/homebrew-php
 
 # Homebrew doesn't include mutt patches
-brew tap kevwil/homebrew-patches
-brew install kevwil/homebrew-patches/mutt --with-sidebar-patch
+#brew tap kevwil/homebrew-patches
+brew install emmanuelbernard/mutt/mutt --with-sidebar-patch
 brew install notmuch
 brew install jp2a
 
@@ -77,7 +77,7 @@ caskInstall google-chrome
 caskInstall iterm2
 #caskInstall p4merge
 #caskInstall sourcetree
-caskInstall macvim
+#caskInstall macvim
 caskInstall keepassx
 caskInstall xquartz
 caskInstall evernote
@@ -99,9 +99,12 @@ brewInstall tmux
 brewInstall reattach-to-user-namespace
 #brewInstall tree
 brewInstall ant
-brewInstall postgresql
+#brewInstall postgresql
 brewInstall terminal-notifier
 brewInstall isync
+brewInstall urlview
+# for patching fonts with nerd-fonts
+brewInstall fontForge 
 
 brew install --devel elinks
 

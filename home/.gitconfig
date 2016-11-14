@@ -33,6 +33,8 @@
   llga = log --graph --pretty=oneline --abbrev-commit --decorate --all
   dt = difftool -t meld -y
   so = remote show origin
+  su = remote show upstream
+  sp = remote show pstros
   mt = mergetool -t meld
 [push]
 	default = simple

@@ -49,8 +49,11 @@ Tech Goals
 * Build and deploy pipeline in jenkins
 * Use Best practices
   * Code coverage, linting, etc
-* M1 MVP Simple and fast, do not preclude more later
-  * Future: team management, multiple plans, more settings, account "admin" concept, combine accounts, etc.
+* Deliver m1 fast
+  * small MVP, 1-1 map login to payment
+* Plan for future features
+  * Don't prevent adding more
+  * maybe: team management, multiple plans, more settings, account "admin" concept, combine accounts, etc.
 * Great UX
-  * Experience upon purchase, expiration
+  * data flow/experience upon purchase, expiration
 

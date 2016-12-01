@@ -18,6 +18,8 @@ export PATH=${PATH}:/opt/visualvm/visualvm_135/bin
 export PATH=${PATH}:/opt/jd-gui
 export PATH=${PATH}:$GRAILS_HOME/bin
 export PATH=${PATH}:$HOME/bin
+# they tell you to put this first in chromiumos docs...*shrug*
+export PATH=${HOME}/dev/collab/connect/depot_tools:${PATH}
 
 # Load the shell dotfiles, and then some:
 # # * ~/.path can be used to extend `$PATH`.

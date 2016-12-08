@@ -37,11 +37,68 @@
     - gather input from tim/taylor/etc re: provisioning process
       - devices
       - users
-    - research: recurly data model
+    x research: recurly data model
     - need to do arch. work for data flow/ownership
     - talk with: connect team regarding device provisioning
       - What are *their* goals
       - how do we uniquely identify a device
       - how to we authenticate/authorize devices
-    - talk with girard: re arch options
+    x talk with girard: re arch options
+
+
+
+*Requirements*
+  - Manage accounts
+    - Create/Update/List on behalf (admin)
+    - Move users/devices between accounts
+    - Merge accounts
+      - Self serve?
+  - Manage users
+    - Create/Remove/Update/List
+    - change settings
+  - Manage devices
+    - Update/List
+    - Add/Remove (???)
+    - Troubleshoot
+    - Track/Notify upon usage
+    - Restart
+    - Change settings
+    - Associate to account
+    - Closed vs Open management model (shared workspace mgmt)
+  - Authentication
+    - Users (provided by auth0)
+    - Devices (unique identification???)
+  - Authorization
+    - Users for usage
+    - Users for features
+      - upsell premium
+    - Users to manage device/account
+    - Device for usage
+    - Users for device access (incl. x-account)
+    - Expiration
+  - Billing
+    - View Invoices
+    - Create/Update billing Info
+    - Plans:
+      - Free Trial
+        - Do not require CC
+      - Self service
+      - Strategic "free indefinitely" accounts
+      - Coupons "Beer Fest 2016"
+      - ReferralCandy, "refer 3 friends for a free month"
+      - Premium features for conversion
+      - Recurring subscription based
+    - Usage-based billing
+      - there be dragons here
+    - Taxes?
+  - Provisioning
+    - Buy from sales automation tool
+    - Off-prem provisioning of connects
+  - Sub-accounts (e.g. deptartment level feature/user inheritance?)
+    - does shared workspace strategy play here?
+  - non-functional
+    -Consistency
+    -Uptime
+    - *Auditability*
+
 

@@ -52,4 +52,41 @@
   - push costs onto tenants?
 
 
+- personal vs paid (leigh)
+  - feature flags
+  - triggers to upsell in-app
+  - "add a 3rd person? click here!"
 
+
+- suretax account
+  - check with tim, should we be hooked into that
+
+
+Connect auth vision
+- open model (tim: preferred)
+  - event driven vs explicitly driven
+  - any employee of owner co can use connect no problem
+  - it person is notified by event, asked to take action
+    - provisional access
+    - approve or deny future usage
+    - list of users (oop, someone left, deny access)
+  - basically, auto add of new users, x-acct
+- closed model
+  - only people on acct can use my connect
+- usage tracking for IT user
+  - which rooms get a lot of use?
+- open model without code access (require bluetooth proximity?)
+- time-based auth?
+- room booking
+
+- possibly a device access add-on
+  - "I want to use industry's devices" add-on sub
+
+- device settings
+
+- device authentication
+  - to listen to pubsub nodes
+  - to prevent malicious registration w/meeting router?
+  - etc
+  - TPM module on nucs? (trusted platform manager)
+    - securely store crypto keys

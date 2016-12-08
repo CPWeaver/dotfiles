@@ -1,0 +1,12 @@
+- TODO
+  - how to host/deploy buy now:
+    - frontend
+    - backend
+  - account data model/data flow
+  - infrastructure
+  - undestand connect provisioning
+  - categorize divergence from upstream
+    - Bert will produce list
+  - josh says firebase auth rules
+
+  - PSTN + (dial in?!?) in 2017

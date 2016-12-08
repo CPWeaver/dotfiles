@@ -63,11 +63,14 @@
     - Track/Notify upon usage
     - Restart
     - Change settings
+      - TBD: storage
     - Associate to account
     - Closed vs Open management model (shared workspace mgmt)
   - Authentication
     - Users (provided by auth0)
     - Devices (unique identification???)
+      - to listen to pubsub nodes
+      - to prevent malicious registration w/mtg router
   - Authorization
     - Users for usage
     - Users for features
@@ -75,6 +78,11 @@
     - Users to manage device/account
     - Device for usage
     - Users for device access (incl. x-account)
+    - notification of usage
+    - "provisonal" access
+    - approve or deny future usage
+    - list of users per device
+    - time-based auth (booking/shared/etc?)
     - Expiration
   - Billing
     - View Invoices
@@ -88,9 +96,12 @@
       - ReferralCandy, "refer 3 friends for a free month"
       - Premium features for conversion
       - Recurring subscription based
+      - possibly a device add-on sub?
+        - e.g. "I want to pay to use industry's devices"
     - Usage-based billing
       - there be dragons here
     - Taxes?
+    - Basic auditing for consistency between auth0 and recurly
   - Provisioning
     - Buy from sales automation tool
     - Off-prem provisioning of connects

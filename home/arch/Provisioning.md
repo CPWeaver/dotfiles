@@ -47,7 +47,7 @@
 
 
 
-*Requirements*
+*Functional Requirements*
   - Manage accounts
     - Create/Update/List on behalf (admin)
     - Move users/devices between accounts
@@ -107,9 +107,52 @@
     - Off-prem provisioning of connects
   - Sub-accounts (e.g. deptartment level feature/user inheritance?)
     - does shared workspace strategy play here?
-  - non-functional
-    -Consistency
-    -Uptime
-    - *Auditability*
 
+- non-functional
+  -Consistency
+  -Uptime
+  - *Auditability*
+
+
+*Components*
+ 1  - User
+      - API
+        - Needed for any modifications to users
+      - Auth0
+        - Create, update, list, delete
+        - Associate user to account
+        - Move user between accounts
+      - Store
+        - TBD: Per-user features?
+        - Settings
+        - Availability
+ 2  - Account
+      - API
+        - Needed for buy now v1
+      - Recurly
+        - Create, Update, List, delete (must be paid through recurly)
+        - Subscriptions
+        - Coupons
+        - account-level features (tracked as subscription)
+        - View invoices
+      - Store
+        - Free trial without CC
+        - "Strategic" accounts
+        - Accounts without billing
+ 3  - Device
+      - ???
+      - Store
+ 4  - Authorization
+      - Store
+        - user-level features
+        - users to device
+          - management
+          - usage
+        - approve or deny future usage
+      - time-based auth
+ 5  - Coordination/Sync
+      - Audit recurly vs auth0
+      - Buy/Provision outside foxden
+ 6  - Internal API
+ 7  - Management API (external)
 

@@ -19,7 +19,7 @@ if tput setaf 1 &> /dev/null; then
       ORANGE=$(tput setaf 4)
       GREEN=$(tput setaf 2)
       PURPLE=$(tput setaf 1)
-      WHITE=$(tput setaf 7)
+      WHITE=$(tput setaf 12)
       YELLOW=$(tput setaf 11)
       # TODO: These aren't getting the right colors
       #MAGENTA=$(tput setaf 9)

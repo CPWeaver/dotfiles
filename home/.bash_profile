@@ -6,6 +6,7 @@
 [ -z "$PS1" ] && return
 
 export PATH=/usr/local/bin:${PATH}
+export PATH=/usr/local/Cellar/grep/3.0/bin:${PATH}
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 export PATH=/usr/local/sbin:${PATH}
 export PATH=/opt/firefox:${PATH}

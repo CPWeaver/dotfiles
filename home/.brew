@@ -32,12 +32,11 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-brewInstall coreutils
-
 # Install GNU core utilities (those that come with OS X are outdated)
 brewInstall coreutils
 echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brewInstall homebrew/dupes/grep --with-default-names
 #brewInstall findutils
 
 # Install Bash 4

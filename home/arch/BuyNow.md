@@ -57,3 +57,11 @@ Tech Goals
 * Great UX
   * data flow/experience upon purchase, expiration
 
+
+- *must do*
+ - verify security of server
+ - test promotion
+ - credential injection
+ - rollback ?
+ - what happens when we switch out of sandbox mode
+

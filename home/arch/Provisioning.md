@@ -63,7 +63,6 @@
     - Track/Notify upon usage
     - Restart
     - Change settings
-      - TBD: storage
     - Associate to account
     - Closed vs Open management model (shared workspace mgmt)
   - Authentication
@@ -113,46 +112,6 @@
   -Uptime
   - *Auditability*
 
-
-*Components*
- 1  - User
-      - API
-        - Needed for any modifications to users
-      - Auth0
-        - Create, update, list, delete
-        - Associate user to account
-        - Move user between accounts
-      - Store
-        - TBD: Per-user features?
-        - Settings
-        - Availability
- 2  - Account
-      - API
-        - Needed for buy now v1
-      - Recurly
-        - Create, Update, List, delete (must be paid through recurly)
-        - Subscriptions
-        - Coupons
-        - account-level features (tracked as subscription)
-        - View invoices
-      - Store
-        - Free trial without CC
-        - "Strategic" accounts
-        - Accounts without billing
- 3  - Device
-      - ???
-      - Store
- 4  - Authorization
-      - Store
-        - user-level features
-        - users to device
-          - management
-          - usage
-        - approve or deny future usage
-      - time-based auth
- 5  - Coordination/Sync
-      - Audit recurly vs auth0
-      - Buy/Provision outside foxden
- 6  - Internal API
- 7  - Management API (external)
-
+comments:
+  - does recurly acct support mulitple billing info
+  - anonymous participants, give features/auth

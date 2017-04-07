@@ -16,7 +16,9 @@ set ssl_starttls = yes
 # For HTML Viewing
 set mailcap_path = ~/.mutt/mailcap
 auto_view text/html
-#alternative_order text/plain text/html
+alternative_order text/plain text/html
+bind attach <return> view-mailcap
+
 
 auto_view image/jpeg
 

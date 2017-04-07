@@ -1,6 +1,8 @@
+text/html; chrome.sh %s; test=test -n "$DISPLAY"; needsterminal
 text/html; elinks -dump -dump-color-mode 4; copiousoutput;
 image/jpeg; mutt_bgrun view_file.sh %s; test=sh -c 'test $DISPLAY'
 image/jpeg; jp2a --colors --width=140 %s; copiousoutput;
+#image/jpeg; imgcat %s; copiousoutput;
 image/*; mutt_bgrun view_file.sh %s; test=sh -c 'test $DISPLAY'
 application/pdf; mutt_bgrun view_file.sh %s
 text/calendar; mutt-ical.py -i -e "chris.weaver@readytalk.com" %s

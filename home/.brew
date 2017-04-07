@@ -36,7 +36,6 @@ brew upgrade
 brewInstall coreutils
 echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brewInstall homebrew/dupes/grep --with-default-names
 #brewInstall findutils
 
 # Install Bash 4
@@ -54,13 +53,11 @@ brewInstall wget --enable-iri
 brewInstall ctags
 
 # Install more recent versions of some OS X tools
-#brew tap homebrew/dupes
-#brewInstall homebrew/dupes/grep
+brewInstall homebrew/dupes/grep --with-default-names
 #brew tap josegonzalez/homebrew-php
 
 # Homebrew doesn't include mutt patches
-#brew tap kevwil/homebrew-patches
-brew install emmanuelbernard/mutt/mutt --with-sidebar-patch
+brew install neomutt/homebrew-neomutt/neomutt --with-sidebar-patch --with-notmuch-patch
 brew install notmuch
 brew install jp2a
 

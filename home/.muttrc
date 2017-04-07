@@ -34,9 +34,8 @@ set timeout = 3
 set mail_check = 0
 
 # Sidebar
-set sidebar_visible=yes
-set sidebar_delim  = '  |'
-set sidebar_width=24
+set sidebar_visible
+set sidebar_width=18
 #color sidebar_new yellow default
 
 #set pager="vim -u $VIM_HOME/macros/less.vim"

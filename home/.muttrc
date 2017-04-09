@@ -16,7 +16,9 @@ set ssl_starttls = yes
 # For HTML Viewing
 set mailcap_path = ~/.mutt/mailcap
 auto_view text/html
-#alternative_order text/plain text/html
+alternative_order text/plain text/html
+bind attach <return> view-mailcap
+
 
 auto_view image/jpeg
 
@@ -34,9 +36,8 @@ set timeout = 3
 set mail_check = 0
 
 # Sidebar
-set sidebar_visible=yes
-set sidebar_delim  = '  |'
-set sidebar_width=24
+set sidebar_visible
+set sidebar_width=18
 #color sidebar_new yellow default
 
 #set pager="vim -u $VIM_HOME/macros/less.vim"

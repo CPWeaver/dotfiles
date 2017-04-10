@@ -91,7 +91,7 @@ brewInstall git
 brewInstall nvm
 #brewInstall rename
 brewInstall the_silver_searcher
-brewInstall tmux
+brewInstall tmux --HEAD
 brewInstall reattach-to-user-namespace
 #brewInstall tree
 brewInstall ant

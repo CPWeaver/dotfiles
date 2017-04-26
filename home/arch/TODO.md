@@ -1,12 +1,23 @@
 - TODO
-  - how to host/deploy buy now:
-    - frontend
-    - backend
-  - account data model/data flow
-  - infrastructure
-  - undestand connect provisioning
-  - categorize divergence from upstream
-    - Bert will produce list
-  - josh says firebase auth rules
+  - Capture Ops/Infra Roadmap
+  - Capture Foxden Architecture
+    - Running Code
+    - Deployment
+    - Services
+  - RESTful/general API design presentation
+  - Microservices presentation
+  - Capture 3rd party deps in arch diagram
 
-  - PSTN + (dial in?!?) in 2017
+- Next steps for team architecture
+  - Talk about Account service, implementation
+    - Stay decoupled form other systems
+    - how to change feature sets/manipulate data with SF integration
+  - Billing Types ("strategic")
+  - Define Team model/services
+  - Talk about Authorization service
+
+  - older:
+    - undestand connect provisioning
+    - categorize divergence from upstream
+      - ??? will produce list
+  - josh says firebase auth rules

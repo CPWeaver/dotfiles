@@ -126,7 +126,7 @@ export DEPLOY_DIR=/home/cweaver/dev/deploy
 export GRAILS_HOME=/home/cweaver/grails/grails
 export LD_LIBRARY_PATH=/usr/lib32
 
-export GRADLE_OPTS="-Xmx1024m -Dorg.gradle.daemon=true"
+export GRADLE_OPTS="-Xmx2048m"
 
 export EDITOR=vim
 

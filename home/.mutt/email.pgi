@@ -1,0 +1,30 @@
+# vim: ft=muttrc
+ 
+# SMTP
+set from="Chris Weaver <christopher.weaver@pgi.com>"
+set record=$HOME/mail/pgi/Sent\ Items
+set postponed=$HOME/mail/pgi/Drafts
+#set smtp_url=smtp://chris.weaver@wynent02.readytalk.com
+#set smtp_pass=$SMTP_PW
+#set ssl_starttls = yes
+
+
+# Maildir
+set mbox_type=Maildir
+set folder=$HOME/mail/pgi
+
+# Remove existing mailbox list -- for switching accounts
+unmailboxes *
+mailboxes `$HOME/.mutt/list_mailboxes.sh ~/mail/pgi`
+set spoolfile=+/INBOX
+set header_cache=~/.cache/mutt
+set sleep_time=0
+set time_inc=200
+
+# Move to a folder -- tagged or selected
+macro index,pager X ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro index,pager S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Support\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+
+# Search using notmuch
+macro index Z "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/mail/pgi/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+

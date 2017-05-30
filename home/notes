@@ -49,3 +49,7 @@ How to update mythtv symlinks:
 
 heap dump
 jmap -dump:format=b,file=jicofo.jprof <pid>
+
+# mpv with passthrough dolby,dts:
+mpv ../../../movie/mkv/Avatar.mkv --audio-channels=8 --audio-device=alsa/hdmi:CARD=NVidia,DEV=1 --ad=spdif:ac3,spdif:dts --ad-spdif-dtshd=yes
+

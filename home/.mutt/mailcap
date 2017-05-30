@@ -7,3 +7,4 @@ image/*; mutt_bgrun view_file.sh %s; test=sh -c 'test $DISPLAY'
 application/pdf; mutt_bgrun view_file.sh %s
 text/calendar; mutt-ical.py -i -e "chris.weaver@readytalk.com" %s
 application/ics; mutt-ical.py -i -e "chris.weaver@readytalk.com" %s
+audio/*; mutt_bgrun view_file.sh %s; test=sh -c 'test $DISPLAY'

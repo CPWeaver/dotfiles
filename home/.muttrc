@@ -5,14 +5,6 @@ set realname = "Chris Weaver"
 set query_command="$HOME/bin/mutt-ldap.pl '%s'"
 bind editor "\t" complete-query
 
-# SMTP
-set from="Chris Weaver <chris.weaver@readytalk.com>"
-set record=$HOME/mail/readytalk/Sent\ Items
-set postponed=$HOME/mail/readytalk/Drafts
-set smtp_url=smtp://chris.weaver@wynent02.readytalk.com
-set smtp_pass=$SMTP_PW
-set ssl_starttls = yes
-
 # For HTML Viewing
 set mailcap_path = ~/.mutt/mailcap
 auto_view text/html
@@ -21,15 +13,6 @@ bind attach <return> view-mailcap
 
 
 auto_view image/jpeg
-
-# Maildir
-set mbox_type=Maildir
-set folder=$HOME/mail/readytalk
-mailboxes `$HOME/.mutt/list_mailboxes.sh`
-set spoolfile=+/INBOX
-set header_cache=~/.cache/mutt
-set sleep_time=0
-set time_inc=200
 
 # Auto check for new mail
 set timeout = 3
@@ -63,9 +46,6 @@ set sort="threads"
 #bind index G last-entry
 bind index u sync-mailbox
 
-
-
-
 # Macros
 
 # Mark all Read
@@ -75,10 +55,13 @@ macro index <esc>M "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "Mark all messages a
 # Works but slow because of tag regex
 # macro index M "T.*\n;WN" "Mark all messages as read"
 
-# Move to a folder -- tagged or selected
-macro index,pager X ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
-macro index,pager S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Support\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+# Macros for switching accounts
+macro index <Esc>r '<sync-mailbox><refresh><enter-command>source ~/.mutt/email.readytalk<enter><change-folder>!<enter>'
+macro index <Esc>p '<sync-mailbox><refresh><enter-command>source ~/.mutt/email.pgi<enter><change-folder>!<enter>'
 
-# Search using notmuch
-macro index Z "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/mail/readytalk/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+set mbox_type=Maildir
+set folder=$HOME/mail
+source ~/.mutt/email.readytalk
 
+folder-hook readytalk/* source ~/.mutt/email.readytalk
+folder-hook pgi/* source ~/.mutt/email.pgi

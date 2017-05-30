@@ -1,0 +1,29 @@
+# vim: ft=muttrc
+ 
+# SMTP
+set from="Chris Weaver <chris.weaver@readytalk.com>"
+set record=$HOME/mail/readytalk/Sent\ Items
+set postponed=$HOME/mail/readytalk/Drafts
+set smtp_url=smtp://chris.weaver@wynent02.readytalk.com
+set smtp_pass=$SMTP_PW
+set ssl_starttls = yes
+
+# Remove existing mailbox list -- for switching accounts
+unmailboxes *
+
+# Maildir
+set mbox_type=Maildir
+set folder=$HOME/mail/readytalk
+mailboxes `$HOME/.mutt/list_mailboxes.sh ~/mail/readytalk`
+set spoolfile=+/INBOX
+set header_cache=~/.cache/mutt
+set sleep_time=0
+set time_inc=200
+
+# Move to a folder -- tagged or selected
+macro index,pager X ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro index,pager S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Support\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+
+# Search using notmuch
+macro index Z "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/mail/readytalk/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -n "+ "
-for file in ~/mail/readytalk/* 
+for file in $1/*
 do 
   box=$(basename "$file")
   echo -n "\"+$box\" "

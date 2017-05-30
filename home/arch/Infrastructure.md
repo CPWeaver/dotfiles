@@ -26,3 +26,48 @@
       - use systemd
 
   - TODO in all this: how to get ecr auth?
+
+
+  - Options:
+    - Stick with ebs
+      - no progress towards microservices
+      - static environments
+      - lack of flexibility
+      - constant difficulty to setup qa/dev/special purpose envs
+      - 0 weeks now, but 1-2 weeks for every future deployment change
+    - k8s
+      - most complex
+      - comes with:
+        - nothing
+      - have to setup:
+        - dns
+        - cross-host networking
+        - ingress
+        - scheduler
+      - have to learn:
+        - management, rolling deploys of workers, etc.
+      - new yaml config files for deploy, service, ingress, each daemon
+      - 4 weeks now, 1 day for future deployment changes
+      - we will get completely tied to this;q;
+    - docker swarm
+      - medium complex
+      - comes with:
+        - dns
+        - cross-host networking
+        - basic scheduler
+      - setup:
+        - ingress
+      - some limitations, scheduling is basic
+      - uses compose files which we already have
+      - 2 weeks now, 1 day for future deployment changes
+    - hashi
+      - simplest conceptually
+      - comes with:
+        - scheduler
+      - setup:
+        - ingress
+      - "piecemeal"
+        - get a scheduler without SDN/dns/etc
+      - new yaml config for jobs
+      - 1-2 weeks now, 1 day for future deployment changes
+

@@ -53,7 +53,7 @@ brewInstall wget --enable-iri
 brewInstall ctags
 
 # Install more recent versions of some OS X tools
-brewInstall homebrew/dupes/grep --with-default-names
+brewInstall homebrew/grep --with-default-names
 #brew tap josegonzalez/homebrew-php
 
 # Homebrew doesn't include mutt patches
@@ -73,16 +73,17 @@ caskInstall google-chrome
 caskInstall iterm2
 #caskInstall p4merge
 #caskInstall sourcetree
-#caskInstall macvim
 caskInstall keepassx
 caskInstall xquartz
 caskInstall evernote
+caskInstall mactex
 
 # Install utils
 #brewInstall ack
 #brewInstall fasd
 brewInstall cmake
 brewInstall git
+brewInstall neovim
 #brewInstall git-flow
 #brewInstall grc
 #brewInstall jsl

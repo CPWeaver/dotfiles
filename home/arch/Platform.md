@@ -175,3 +175,42 @@ infrastructure:
       - overlay is cluster level, not app level
       - each pod gets an ip in the network
     - ingress controller is your vhost/port LB in the controller
+
+--
+Contract:
+
+
+  - Foxden:
+    - init(Auth) -> Participant
+  - Participant
+    - getScreenShare() -> FoxdenStream
+  - Foxden
+    - joinSession(ID) -> Session
+      - waits for start
+    - leaveSession()
+    - start(opts) -> Session
+  - Session
+    - addStream(FoxdenStream)
+    - removeStream(FoxdenStream)
+    - Events:
+      - StreamAdded
+      - StreamRemoved
+
+
+
+  Utilities:
+    - get screen share stream
+    - attaching/rendering video elements
+
+Epics:
+  - Hello World client app
+  - Sessions
+    - join
+    - leave
+    - start??
+  - getScreenShare
+    - plugin management
+    - constraints
+  - addStream
+    - streamAdded
+

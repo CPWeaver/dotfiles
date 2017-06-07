@@ -1,4 +1,32 @@
 
+Concerns:
+  - We're likely going to standardize on Kubernetes
+    - Compatibility with PGi (or beyond) systems and ops teams
+  - Need to keep Foxden independent from cloud provider be it aws/compute/openstack/whatever
+
+Goals:
+  - Make service development easy and fast to enable flexible design and rapid development
+
+Constraints:
+  - We don't have a kubernetes cluster ready for Foxden, yet
+
+Goals:
+  1) keep foxden independent from cloud provider
+  2) don't get coupled to the hashi toolset
+
+Approach:
+
+  - Hashi stack can provide that the quickest although it is likely not the ultimate solution
+  - Don't write anything stack-specific into the services
+  - Approach:
+    - Scheduler: Services should have zero knowledge here
+    - Load balancing: Services should have zero knowledge here either
+    - Discovery: Inject into containers via ENV rather than query.
+
+
+
+
+
 - Would like to split cluster basically in the way described in coreos architecture docs...
   - Central Services: core machines running consul/nomad
   - Workers: large number of workers running agents only
@@ -71,3 +99,20 @@
       - new yaml config for jobs
       - 1-2 weeks now, 1 day for future deployment changes
 
+
+  - k8s stories
+    - 1223 Standup initial k8s cluster
+    - 1312 cluster dns
+    - 1225 verify worker rolling deploys
+    - 1305 verify master rolling deploys
+    - 1306 test a blue green failover
+    - dev experience
+    - 1307 add dns
+    - 1308 add ingress
+    - 1309 add dashboard
+    - 1310 add logging
+    - 1311 add metrics
+    - 1227 port ionic apps
+    - spike: how to handle pods/consul
+    - 1228 port meeting router
+    - 1229 update pods

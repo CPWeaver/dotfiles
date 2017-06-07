@@ -1,3 +1,4 @@
+# vim: filetype=sh
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -96,7 +97,7 @@ if command_exists brew ; then
   export NVM_DIR=~/.nvm
   source "$(brew --prefix nvm)/nvm.sh"
 else
-  if command_exists "$HOME/.nvm/nvm.sh" ; then
+  if [ -e "$HOME/.nvm/nvm.sh" ]; then
     export NVM_DIR=~/.nvm
     source "$HOME/.nvm/nvm.sh"
   fi

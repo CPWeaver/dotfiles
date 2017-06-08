@@ -15,6 +15,7 @@ export PATH=/opt/thunderbird:${PATH}
 export PATH=/usr/local/Cellar/ctags/5.8/bin:${PATH}
 export PATH=$HOME/.rbenv/bin:${PATH}
 export PATH=/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/:${PATH}
+export PATH=${PATH}:/Library/TeX/texbin/
 export PATH=${PATH}:/opt/mat
 export PATH=${PATH}:/opt/visualvm/visualvm_135/bin
 export PATH=${PATH}:/opt/jd-gui

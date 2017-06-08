@@ -52,3 +52,4 @@ docker run --rm -p 8080:8080 -e REG1=https://docker.ecovate.com/v1/ atcol/docker
 # one liner to load tcpdump into a boot2docker image
 tce-load -wi tcpdump.tcz; tce-load -wi netfilter-4.2.9-tinycore64.tcz; cd /tmp/tce/optional/; sudo cp netfilter-4.2.9-tinycore64.tcz.md5.txt netfilter-4.4.61-boot2docker.tcz.md5.txt; sudo cp netfilter-4.2.9-tinycore64.tcz netfilter-4.4.61-boot2docker.tcz; tce-load -wi tcpdump.tcz
 
+~/.nvm/versions/node/v8.0.0/bin/latex-watcher -t resume

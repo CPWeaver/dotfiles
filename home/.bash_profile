@@ -6,23 +6,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export PATH=/usr/local/bin:${PATH}
-export PATH=/usr/local/Cellar/grep/3.0/bin:${PATH}
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
-export PATH=/usr/local/sbin:${PATH}
-export PATH=/opt/firefox:${PATH}
-export PATH=/opt/thunderbird:${PATH}
-export PATH=/usr/local/Cellar/ctags/5.8/bin:${PATH}
-export PATH=$HOME/.rbenv/bin:${PATH}
-export PATH=/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/:${PATH}
-export PATH=${PATH}:/Library/TeX/texbin/
-export PATH=${PATH}:/opt/mat
-export PATH=${PATH}:/opt/visualvm/visualvm_135/bin
-export PATH=${PATH}:/opt/jd-gui
-export PATH=${PATH}:$GRAILS_HOME/bin
-export PATH=${PATH}:$HOME/bin
-# they tell you to put this first in chromiumos docs...*shrug*
-export PATH=${HOME}/dev/collab/connect/depot_tools:${PATH}
 
 # Load the shell dotfiles, and then some:
 # # * ~/.path can be used to extend `$PATH`.

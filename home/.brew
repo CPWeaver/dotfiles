@@ -92,11 +92,18 @@ brewInstall terminal-notifier
 brewInstall isync
 brewInstall urlview
 
+# deps for compiling keepassxc
+brewInstall qt5 
+brewInstall libgcrypt
+brewInstall libyubikey
+brewInstall ykpers
+
 # for patching fonts with nerd-fonts
 brewInstall fontForge 
 
 brew install --devel elinks
 
+#brewInstall ant
 # Install Maven
 #brewInstall maven
 # Add Maven to the OS X environment

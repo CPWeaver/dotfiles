@@ -53,7 +53,7 @@ brewInstall wget --enable-iri
 brewInstall ctags
 
 # Install more recent versions of some OS X tools
-brewInstall homebrew/grep --with-default-names
+#brewInstall homebrew/grep --with-default-names
 #brew tap josegonzalez/homebrew-php
 
 # Homebrew doesn't include mutt patches
@@ -71,23 +71,16 @@ caskInstall firefox
 caskInstall google-chrome
 #caskInstall google-drive
 caskInstall iterm2
-#caskInstall p4merge
-#caskInstall sourcetree
-caskInstall keepassx
 caskInstall xquartz
 caskInstall evernote
 caskInstall mactex
 
 # Install utils
-#brewInstall ack
 #brewInstall fasd
 brewInstall cmake
 brewInstall git
 brewInstall neovim
 #brewInstall git-flow
-#brewInstall grc
-#brewInstall jsl
-#brewInstall lynx
 #brewInstall multimarkdown
 brewInstall nvm
 #brewInstall rename
@@ -95,18 +88,22 @@ brewInstall the_silver_searcher
 brewInstall tmux --HEAD
 brewInstall reattach-to-user-namespace
 #brewInstall tree
-brewInstall ant
-#brewInstall postgresql
 brewInstall terminal-notifier
 brewInstall isync
 brewInstall urlview
+
+# deps for compiling keepassxc
+brewInstall qt5 
+brewInstall libgcrypt
+brewInstall libyubikey
+brewInstall ykpers
+
 # for patching fonts with nerd-fonts
 brewInstall fontForge 
 
 brew install --devel elinks
 
-#brewInstall macvim --override-system-vim
-
+#brewInstall ant
 # Install Maven
 #brewInstall maven
 # Add Maven to the OS X environment

@@ -7,7 +7,7 @@ function install_tool() {
   toolrepo=$2
 
   if [ ! -d "$HOME/dev/tools/$toolname" ]; then
-    cd ~/dev/tools && git clone $toolrepo
+    cd ~/dev/tools && git clone "$toolrepo"
   fi
 }
 
@@ -46,7 +46,7 @@ install_tool "tmux"      "git@github.com:tmux/tmux.git"
 install_tool "neovim"    "git@github.com:neovim/neovim.git" 
 
 
-platform=`uname`
+platform=$(uname)
 
 declare -a neovimbuild=(
   "neovim"
@@ -88,5 +88,5 @@ if [[ $platform == "Linux"* ]]; then
 fi
 
 run_install_cmds "tmux"     "sudo make install"
-run_install_cmds "keepassxc" "sudo make install"
+run_install_cmds "keepassxc" "cd build" "sudo make install"
 run_install_cmds "neovim"   "sudo make -j4 install"

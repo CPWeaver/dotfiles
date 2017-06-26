@@ -20,6 +20,9 @@ homeshick symlink dotfiles
 
 git clone git://github.com/CPWeaver/dot_vim.git $HOME/.vim
 
+# Setup TPM
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Install dot_vim + vundle
 cd $HOME/.vim
 ./install

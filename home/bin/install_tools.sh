@@ -18,7 +18,7 @@ function run_build_cmds() {
   echo "*** Working on $toolname"
   echo "***"
 
-  cd "$HOME/dev/tools/$toolname" || exit 1 "Couldn't cd to tool directory"
+  cd "$HOME/dev/tools/$toolname" || exit 1 
   git pull
   git clean -fdx
   commands=( "$@" )
@@ -34,7 +34,7 @@ function run_install_cmds() {
   echo "*** Installing $toolname"
   echo "***"
 
-  cd "$HOME/dev/tools/$toolname" || exit 1 "Couldn't cd to tool directory"
+  cd "$HOME/dev/tools/$toolname" || exit 1
   commands=( "$@" )
   for command in "${commands[@]}"; do
     $command || exit 1
@@ -87,5 +87,6 @@ if [[ $platform == "Linux"* ]]; then
   run_install_cmds "keepassxc" "sudo make install"
 fi
 
-run_install_cmds "tmux"   "sudo make install"
-run_install_cmds "neovim" "sudo make -j4 install"
+run_install_cmds "tmux"     "sudo make install"
+run_install_cmds "keepassxc" "sudo make install"
+run_install_cmds "neovim"   "sudo make -j4 install"

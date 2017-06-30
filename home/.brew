@@ -79,13 +79,11 @@ caskInstall mactex
 #brewInstall fasd
 brewInstall cmake
 brewInstall git
-brewInstall neovim
 #brewInstall git-flow
 #brewInstall multimarkdown
 brewInstall nvm
 #brewInstall rename
 brewInstall the_silver_searcher
-brewInstall tmux --HEAD
 brewInstall reattach-to-user-namespace
 #brewInstall tree
 brewInstall terminal-notifier

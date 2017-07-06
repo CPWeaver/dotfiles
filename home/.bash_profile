@@ -37,6 +37,10 @@ if [ -r /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 if type brew >/dev/null 2>&1; then
+  for file in $(brew --prefix)/etc/bash_completion.d/* ; do
+    source "$file"
+  done
+
   if [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
     . "$(brew --prefix)/share/bash-completion/bash_completion"
   fi

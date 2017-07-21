@@ -50,8 +50,11 @@ platform=$(uname)
 
 declare -a neovimbuild=(
   "neovim"
-  "make -j4"
 )
+#declare -a neovimbuild=(
+  #"neovim"
+  #"make -j4"
+#)
 
 declare -a tmuxbuild=(
   "tmux"
@@ -73,14 +76,14 @@ if [[ $platform == "Darwin"* ]]; then
 fi
 
 if [[ $platform == "Linux"* ]]; then
-  keepassbuild+=("cmake -DWITH_XC_AUTOTYPE=ON -DWITH_XC_HTTP=ON -DWITH_XC_YUBIKEY=ON \
+  keepassbuild+=("cmake -DWITH_XC_AUTOTYPE=ON -DWITH_XC_HTTP=ON -DWITH_XC_YUBIKEY=OFF \
                     -DCMAKE_BUILD_TYPE=Release ..")
   keepassbuild+=("make -j8")
 fi
 
 run_build_cmds "${keepassbuild[@]}"
 run_build_cmds "${tmuxbuild[@]}"
-#run_build_cmds "${neovimbuild[@]}"
+run_build_cmds "${neovimbuild[@]}"
 
 ## No auto install on mac
 #if [[ $platform == "Linux"* ]]; then
@@ -89,4 +92,4 @@ run_build_cmds "${tmuxbuild[@]}"
 
 run_install_cmds "tmux"     "sudo make install"
 run_install_cmds "keepassxc" "cd build" "pwd" "sudo make install"
-run_install_cmds "neovim"   "sudo make -j4 install" "sudo git clean -fdx"
+run_install_cmds "neovim"   "sudo make install" "sudo git clean -fdx"

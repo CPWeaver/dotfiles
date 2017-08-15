@@ -51,6 +51,10 @@ platform=$(uname)
 declare -a neovimbuild=(
   "neovim"
 )
+#declare -a neovimbuild=(
+  #"neovim"
+  #"make -j4"
+#)
 
 #declare -a neovimbuild=(
   #"neovim"
@@ -77,7 +81,7 @@ if [[ $platform == "Darwin"* ]]; then
 fi
 
 if [[ $platform == "Linux"* ]]; then
-  keepassbuild+=("cmake -DWITH_XC_AUTOTYPE=ON -DWITH_XC_HTTP=ON -DWITH_XC_YUBIKEY=ON \
+  keepassbuild+=("cmake -DWITH_XC_AUTOTYPE=ON -DWITH_XC_HTTP=ON -DWITH_XC_YUBIKEY=OFF \
                     -DCMAKE_BUILD_TYPE=Release ..")
   keepassbuild+=("make -j8")
 fi

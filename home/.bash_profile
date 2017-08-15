@@ -117,7 +117,7 @@ export LD_LIBRARY_PATH=/usr/lib32
 
 export GRADLE_OPTS="-Xmx2048m"
 
-export EDITOR=vim
+export EDITOR=vi
 
 export MAILDIR="$HOME/mail/readytalk"
 

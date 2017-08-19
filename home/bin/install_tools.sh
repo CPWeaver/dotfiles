@@ -56,11 +56,6 @@ declare -a neovimbuild=(
   #"make -j4"
 #)
 
-#declare -a neovimbuild=(
-  #"neovim"
-  #"make -j4"
-#)
-
 declare -a tmuxbuild=(
   "tmux"
   "./autogen.sh"

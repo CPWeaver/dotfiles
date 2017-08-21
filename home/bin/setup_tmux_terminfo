@@ -3,3 +3,4 @@ export TERMINFO=~/.terminfo
 tic -x -e tmux terminfo.src
 tic -x -e tmux-256color terminfo.src
 
+tic ~/xterm-256color-italic.terminfo

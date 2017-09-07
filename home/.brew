@@ -18,12 +18,12 @@ function brewInstall() {
 
 function caskInstall() {
   brew cask list | grep "^$1$" > /dev/null 2>&1
-  #if [ $? -ne 0 ]; then
+  if [ $? -ne 0 ]; then
     echo "Installing $1..."
     brew cask install $1
-  #else
-    #echo "Skipping $1 (already installed)"
-  #fi
+  else
+    echo "Skipping $1 (already installed)"
+  fi
 }
 
 # Make sure we’re using the latest Homebrew
@@ -63,9 +63,9 @@ brew install jp2a
 
 # Applications distributed as binaries
 brew tap caskroom/cask
-#caskInstall(adium)
+brew tap caskroom/drivers
 
-caskInstall adium
+#caskInstall(adium)
 #caskInstall caffeine
 caskInstall firefox
 caskInstall google-chrome
@@ -73,7 +73,11 @@ caskInstall google-chrome
 caskInstall iterm2
 caskInstall xquartz
 caskInstall evernote
-caskInstall mactex
+#caskInstall mactex
+caskInstall keepassxc
+caskInstall scroll-reverser
+caskInstall logitech-unifying
+caskInstall logitech-control-center
 
 # Install utils
 #brewInstall fasd
@@ -96,10 +100,15 @@ brewInstall libgcrypt
 brewInstall libyubikey
 brewInstall ykpers
 
+# deps for compiling tmux
+brewInstall libevent
+
 # for patching fonts with nerd-fonts
 brewInstall fontForge 
 
 brew install --devel elinks
+
+brewInstall go@1.8
 
 #brewInstall ant
 # Install Maven

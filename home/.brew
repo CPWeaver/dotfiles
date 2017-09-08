@@ -109,6 +109,8 @@ brewInstall fontForge
 brew install --devel elinks
 
 brewInstall go@1.8
+brewInstall docker-completion
+brewInstall docker-compose-completion
 
 #brewInstall ant
 # Install Maven

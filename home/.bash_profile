@@ -6,6 +6,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+set -o vi
+bind '"jk":vi-movement-mode'
 
 # Load the shell dotfiles, and then some:
 # # * ~/.path can be used to extend `$PATH`.
@@ -108,6 +110,7 @@ if [ ! -d $VIM_HOME ]; then
 fi
 
 
+export GOPATH=$HOME/dev/invision/go/
 
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/home/cweaver/dev/deploy

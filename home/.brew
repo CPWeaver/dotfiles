@@ -78,9 +78,12 @@ caskInstall keepassxc
 caskInstall scroll-reverser
 caskInstall logitech-unifying
 caskInstall logitech-control-center
+caskInstall sequel-pro
 
 # Install utils
 #brewInstall fasd
+brewInstall ffmpeg
+brewInstall gifsicle
 brewInstall cmake
 brewInstall git
 #brewInstall git-flow
@@ -109,6 +112,11 @@ brewInstall fontForge
 brew install --devel elinks
 
 brewInstall go@1.8
+# ..and tags
+brewInstall gotags
+
+brewInstall yarn
+
 brewInstall docker-completion
 brewInstall docker-compose-completion
 

@@ -114,6 +114,7 @@ brew install --devel elinks
 brewInstall go@1.8
 # ..and tags
 brewInstall gotags
+brewInstall go-delve/delve/delve
 
 brewInstall yarn
 

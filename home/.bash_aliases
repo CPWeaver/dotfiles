@@ -8,6 +8,8 @@ alias sl='ls'
 alias h='history'
 alias mat='~/dev/tools/mat/MemoryAnalyzer -data temp/mat -vmargs -Xmx6g'
 alias nodepath='export PATH=$(npm bin):$PATH'
+alias docekr='docker'
+alias d='docker'
 
 # LS Aliases
 

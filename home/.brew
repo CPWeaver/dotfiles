@@ -79,6 +79,7 @@ caskInstall scroll-reverser
 caskInstall logitech-unifying
 caskInstall logitech-control-center
 caskInstall sequel-pro
+caskInstall jet
 
 # Install utils
 #brewInstall fasd

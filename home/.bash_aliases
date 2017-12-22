@@ -41,3 +41,4 @@ alias ll='ls -l ${colorflag}'
 #alias la='ls -A'
 #alias l='ls -CF'
 
+alias killcamera="sudo killall VDCAssistant"

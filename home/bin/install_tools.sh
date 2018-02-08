@@ -81,7 +81,7 @@ if [[ $platform == "Linux"* ]]; then
   keepassbuild+=("make -j8")
 fi
 
-#run_build_cmds "${keepassbuild[@]}"
+# run_build_cmds "${keepassbuild[@]}"
 run_build_cmds "${tmuxbuild[@]}"
 run_build_cmds "${neovimbuild[@]}"
 
@@ -91,5 +91,5 @@ run_build_cmds "${neovimbuild[@]}"
 #fi
 
 run_install_cmds "tmux"     "sudo make install"
-#run_install_cmds "keepassxc" "cd build" "pwd" "sudo make install"
+# run_install_cmds "keepassxc" "cd build" "pwd" "sudo make install"
 run_install_cmds "neovim"   "sudo make -j4 CMAKE_BUILD_TYPE=Release install" "sudo git clean -fdx"

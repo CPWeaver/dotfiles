@@ -83,7 +83,7 @@ fi
 
 # init nvm if it exists
 if command_exists brew ; then
-  export NVM_DIR=~/.nvm
+  export NVM_DIR="$HOME/.nvm"
   source "$(brew --prefix nvm)/nvm.sh"
 else
   if [ -e "$HOME/.nvm/nvm.sh" ]; then

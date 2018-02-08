@@ -103,6 +103,8 @@ brewInstall qt5
 brewInstall libgcrypt
 brewInstall libyubikey
 brewInstall ykpers
+brewInstall argon2
+brewInstall libsodium
 
 # deps for compiling tmux
 brewInstall libevent
@@ -117,7 +119,7 @@ brewInstall go@1.8
 brewInstall gotags
 brewInstall go-delve/delve/delve
 
-brewInstall yarn
+brewInstall yarn --without-node
 
 brewInstall docker-completion
 brewInstall docker-compose-completion

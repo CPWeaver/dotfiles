@@ -40,7 +40,6 @@ echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH.
 
 # Install Bash 4
 brewInstall bash
-brew tap homebrew/versions
 brewInstall bash-completion2
 # Make Brew's bash the default shell
 sudo su - root -c 'echo "/usr/local/bin/bash\n" >> /etc/shells'
@@ -81,6 +80,7 @@ caskInstall logitech-control-center
 caskInstall sequel-pro
 caskInstall robo-3t
 caskInstall jet
+caskInstall pritunl
 
 # Install utils
 #brewInstall fasd
@@ -115,7 +115,7 @@ brewInstall fontForge
 
 brew install --devel elinks
 
-brewInstall go@1.8
+brewInstall go
 # ..and tags
 brewInstall gotags
 brewInstall go-delve/delve/delve

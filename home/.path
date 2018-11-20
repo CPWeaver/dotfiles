@@ -2,8 +2,8 @@
 
 export PATH=/usr/local/bin:${PATH}
 export PATH=/usr/local/Cellar/grep/3.0/bin:${PATH}
-export PATH=/usr/local/opt/go@1.8/bin:${PATH}
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+export PATH=$HOME/dev/invision/go/bin:${PATH}
 export PATH=/usr/local/sbin:${PATH}
 export PATH=/opt/firefox:${PATH}
 export PATH=/opt/thunderbird:${PATH}
@@ -16,4 +16,3 @@ export PATH=${PATH}:/opt/visualvm/visualvm_135/bin
 export PATH=${PATH}:/opt/jd-gui
 export PATH=${PATH}:$GRAILS_HOME/bin
 export PATH=${PATH}:$HOME/bin
-export PATH=$HOME/dev/invision/go/bin:${PATH}

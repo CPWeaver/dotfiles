@@ -38,3 +38,5 @@
   mt = mergetool -t meld
 [push]
 	default = simple
+[url "git@github.com:"]
+	insteadOf = https://github.com/

@@ -42,3 +42,7 @@ alias ll='ls -l ${colorflag}'
 #alias l='ls -CF'
 
 alias killcamera="sudo killall VDCAssistant"
+
+alias gvf="govendor fetch -v ${1}"
+alias gvr="govendor remove -v ${1}"
+alias gvl="govendor list | grep ${1}"

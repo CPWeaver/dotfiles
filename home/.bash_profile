@@ -110,7 +110,7 @@ if [ ! -d $VIM_HOME ]; then
 fi
 
 
-export GOPATH=$HOME/dev/invision/go/
+export GOPATH=$HOME/dev/invision/go
 
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/home/cweaver/dev/deploy

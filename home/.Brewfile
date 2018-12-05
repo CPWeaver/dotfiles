@@ -34,6 +34,8 @@ brew "fzf"
 
 # dependencies for compiling tmux
 brew "libevent"
+brew "automake"
+brew "pkg-config"
 
 # dependencies for compiling keepassxc
 brew "qt"
@@ -65,3 +67,5 @@ cask "robo-3t"
 cask "scroll-reverser"
 cask "sequel-pro"
 cask "wireshark"
+cask "krisp"
+cask "visual-studio-code"

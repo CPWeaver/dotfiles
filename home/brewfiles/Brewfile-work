@@ -1,0 +1,15 @@
+cask "pritunl"
+cask "robo-3t"
+cask "sequel-pro"
+cask "wireshark"
+cask "krisp"
+cask "visual-studio-code"
+cask "jet"
+cask "logitech-control-center"
+cask "logitech-unifying"
+
+brew "go"
+brew "gotags"
+brew "delve"
+
+

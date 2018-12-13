@@ -1,0 +1,62 @@
+tap "codeship/taps"
+tap "go-delve/delve"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/core"
+tap "homebrew/versions"
+cask "xquartz"
+brew "bash"
+brew "bash-completion@2"
+brew "ccat"
+brew "cmake"
+brew "coreutils"
+brew "ctags"
+brew "docker-completion"
+brew "docker-compose-completion"
+brew "elinks"
+brew "ffmpeg"
+brew "fontforge"
+brew "gifsicle"
+brew "git"
+brew "graphviz"
+brew "nvm"
+brew "python"
+brew "ripgrep"
+brew "fzf"
+
+#
+# tap "neomutt/neomutt"
+# brew "isync"
+# brew "jp2a"
+# brew "notmuch"
+# brew "neomutt/neomutt/neomutt", args: ["with-notmuch-patch"]
+#
+
+# dependencies for compiling tmux
+brew "libevent"
+brew "automake"
+brew "pkg-config"
+
+# dependencies for compiling keepassxc
+brew "qt"
+brew "libgcrypt"
+brew "libyubikey"
+brew "ykpers"
+brew "argon2"
+brew "libsodium"
+
+brew "reattach-to-user-namespace"
+brew "ruby", link: true
+brew "terminal-notifier"
+brew "the_silver_searcher"
+brew "urlview"
+brew "wget"
+brew "yarn", args: ["without-node"]
+cask "evernote"
+cask "firefox"
+cask "gimp"
+cask "google-chrome"
+cask "iterm2"
+cask "keepassxc"
+cask "scroll-reverser"

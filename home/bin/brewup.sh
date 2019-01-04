@@ -47,4 +47,6 @@ if [ $? -ne 0 ]; then
   exit "Error updating work bundle"
 fi
 
+brew upgrade
+
 brew cleanup

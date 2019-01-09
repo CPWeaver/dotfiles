@@ -45,6 +45,7 @@ brew "libyubikey"
 brew "ykpers"
 brew "argon2"
 brew "libsodium"
+brew "qrencode"
 
 brew "reattach-to-user-namespace"
 brew "ruby", link: true

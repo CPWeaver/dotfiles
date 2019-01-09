@@ -69,9 +69,7 @@ declare -a keepassbuild=(
   "cd build"
 )
 if [[ $platform == "Darwin"* ]]; then
-  keepassbuild+=("cmake -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release \
-                    -DWITH_XC_AUTOTYPE=ON -DWITH_XC_HTTP=ON -DWITH_XC_YUBIKEY=ON \
-                    -DCMAKE_PREFIX_PATH=/usr/local/Cellar/qt/5.9.1/lib/cmake ..")
+  keepassbuild+=("cmake -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release -DWITH_XC_ALL=ON ..")
   keepassbuild+=("make -j4 package")
 fi
 

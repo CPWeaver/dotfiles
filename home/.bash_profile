@@ -124,5 +124,4 @@ export EDITOR=vi
 
 export MAILDIR="$HOME/mail/readytalk"
 
-#export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
-
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

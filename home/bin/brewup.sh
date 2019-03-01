@@ -1,7 +1,12 @@
 #!/usr/local/bin/bash
 
+function error_exit {
+  echo "$1" >&2
+  exit "${2:-1}"
+}
+
 if [ $? -ne 0 ]; then
-  exit "Error updating homebrew"
+  error_exit "Error updating homebrew"
 fi
 
 while getopts :hw OPTION
@@ -20,8 +25,7 @@ do
       WORK=1
       ;;
     \?) 
-      echo "$0: unknown option -$OPTARG"
-      exit 1
+      error_exit "$0: unknown option -$OPTARG"
       ;;
   esac
 done
@@ -29,13 +33,13 @@ done
 brew update 
 
 if [ $? -ne 0 ]; then
-  exit "Error updating homebrew"
+  error_exit "Error updating homebrew"
 fi
 
 brew bundle install -v --file=~/brewfiles/Brewfile
 
 if [ $? -ne 0 ]; then
-  exit "Error updating common bundle"
+  error_exit "Error updating common bundle"
 fi
 
 if [ $WORK ]; then
@@ -44,7 +48,7 @@ if [ $WORK ]; then
 fi
 
 if [ $? -ne 0 ]; then
-  exit "Error updating work bundle"
+  error_exit "Error updating work bundle"
 fi
 
 brew upgrade

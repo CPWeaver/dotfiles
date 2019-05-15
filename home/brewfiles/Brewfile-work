@@ -11,5 +11,6 @@ cask "logitech-unifying"
 brew "go"
 brew "gotags"
 brew "delve"
+brew "hub"
 
 

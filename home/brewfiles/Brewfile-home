@@ -1,0 +1,4 @@
+brew "media-info"
+
+cask "digikam"
+

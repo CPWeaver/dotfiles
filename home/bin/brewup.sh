@@ -9,20 +9,24 @@ if [ $? -ne 0 ]; then
   error_exit "Error updating homebrew"
 fi
 
-while getopts :hw OPTION
+while getopts :Hhw OPTION
 do
   case $OPTION in 
-    h) 
+    H) 
       echo "Updates homebrew dependencies"
       echo ""
       echo "Usage:"
-      echo "$0 [-h] [-w]"
-      echo " -h show help message"
+      echo "$0 [-H] [-h] [-w]"
+      echo " -H show help message"
+      echo " -h include home Brewfile"
       echo " -w include work Brewfile"
       exit
       ;;
+    h)
+      INCLUDE_HOME=1
+      ;;
     w)
-      WORK=1
+      INCLUDE_WORK=1
       ;;
     \?) 
       error_exit "$0: unknown option -$OPTARG"
@@ -42,9 +46,14 @@ if [ $? -ne 0 ]; then
   error_exit "Error updating common bundle"
 fi
 
-if [ $WORK ]; then
+if [ $INCLUDE_WORK ]; then
   echo "Including work bundle."
   brew bundle install -v --file=~/brewfiles/Brewfile-work
+fi
+
+if [ $INCLUDE_HOME ]; then
+  echo "Including home bundle."
+  brew bundle install -v --file=~/brewfiles/Brewfile-home
 fi
 
 if [ $? -ne 0 ]; then

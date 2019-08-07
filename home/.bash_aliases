@@ -11,6 +11,11 @@ alias nodepath='export PATH=$(npm bin):$PATH'
 alias docekr='docker'
 alias d='docker'
 
+alias ..="cd .."
+
+alias ...="cd ../.."
+
+alias ....="cd ../../.."
 # LS Aliases
 
 # Detect which `ls` flavor is in use

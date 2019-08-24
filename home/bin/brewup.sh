@@ -57,7 +57,7 @@ if [ $INCLUDE_HOME ]; then
 fi
 
 if [ $? -ne 0 ]; then
-  error_exit "Error updating work bundle"
+  error_exit "Error updating bundles"
 fi
 
 brew upgrade

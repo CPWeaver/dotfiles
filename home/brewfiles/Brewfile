@@ -31,6 +31,9 @@ brew "fzf"
 # brew "neomutt/neomutt/neomutt", args: ["with-notmuch-patch"]
 #
 
+# dependencies for compiling neovim
+brew "luajit"
+
 # dependencies for compiling tmux
 brew "libevent"
 brew "automake"

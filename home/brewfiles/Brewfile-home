@@ -4,8 +4,8 @@ brew "media-info"
 brew "fdk-aac"
 brew "varenc/ffmpeg/ffmpeg", args: ["with-fdk-aac"]
 brew "easy-tag"
-brew "vlc"
 
+cask "vlc"
 cask "digikam"
 cask "evernote"
 

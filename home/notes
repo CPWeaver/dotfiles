@@ -1,3 +1,8 @@
+To fix italics in tmux
+`tic xterm-256color-italic.terminfo`
+
+
+
 To compile VIM on debian:
 
 - basically, follow you complete me docs

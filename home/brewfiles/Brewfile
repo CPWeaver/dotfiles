@@ -54,7 +54,6 @@ brew "terminal-notifier"
 brew "the_silver_searcher"
 brew "urlview"
 brew "wget"
-brew "yarn", args: ["without-node"]
 cask "firefox"
 cask "gimp"
 cask "google-chrome"

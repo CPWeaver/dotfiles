@@ -90,4 +90,4 @@ run_build_cmds "${neovimbuild[@]}"
 
 run_install_cmds "tmux"     "sudo make install"
 # run_install_cmds "keepassxc" "cd build" "pwd" "sudo make install"
-run_install_cmds "neovim"   "sudo make CMAKE_INSTALL_PREFIX=/usr/local CMAKE_BUILD_TYPE=Release" "sudo make install" "sudo git clean -fdx"
+run_install_cmds "neovim"   "sudo MACOSX_DEPLOYMENT_TARGET=10.14 make CMAKE_INSTALL_PREFIX=/usr/local CMAKE_BUILD_TYPE=Release" "sudo make install" "sudo git clean -fdx"

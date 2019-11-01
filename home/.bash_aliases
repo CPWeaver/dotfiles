@@ -1,5 +1,5 @@
 #alias vi='gvim'
-#alias vi='vim'
+alias vi='nvim'
 alias sa='source ~/.bash_aliases'
 alias vb='vi ~/.bashrc'
 alias sb='source ~/.bashrc'
@@ -12,10 +12,10 @@ alias docekr='docker'
 alias d='docker'
 
 alias ..="cd .."
-
 alias ...="cd ../.."
-
 alias ....="cd ../../.."
+
+alias teams="pushd ~/dev/invision/go/src/github.com/InVisionApp/teams-api"
 # LS Aliases
 
 # Detect which `ls` flavor is in use

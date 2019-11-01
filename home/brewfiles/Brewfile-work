@@ -6,11 +6,14 @@ cask "krisp"
 cask "visual-studio-code"
 cask "jet"
 cask "logitech-control-center"
-cask "logitech-unifying"
+#cask "logitech-unifying"
+cask "zoomus"
+cask "slack"
+cask "encryptme"
+cask "docker"
 
 brew "go"
 brew "gotags"
-brew "delve"
 brew "hub"
-
+brew "fontforge"
 

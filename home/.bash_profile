@@ -111,6 +111,7 @@ fi
 
 
 export GOPATH=$HOME/dev/invision/go
+export GOBIN=$GOPATH/bin
 
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/home/cweaver/dev/deploy

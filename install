@@ -1,3 +1,5 @@
+#!/bin/sh 
+
 DOTFILES="https://github.com/CPWeaver/dotfiles.git"
 CMDS="git vim"
 
@@ -11,7 +13,7 @@ done
 
 # Install Homeshick
 echo "Installing Homeshick to manage dotfiles..."
-if [ ! -d "$HOME/.homesick/repos/homeshick" ];
+if [ ! -d "$HOME/.homesick/repos/homeshick" ]; then
   git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 fi
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
@@ -21,7 +23,7 @@ homeshick clone $DOTFILES
 homeshick symlink dotfiles
 
 # Setup TPM
-if [ ! -d "$HOME/.tmux/plugins/tpm" ];
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 fi
 

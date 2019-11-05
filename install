@@ -27,7 +27,7 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 fi
 
-if type defaults > /dev/null; then
+if type defaults >& /dev/null; then
   # setup iterm2 profile
   # Specify the preferences directory
   defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iterm2"

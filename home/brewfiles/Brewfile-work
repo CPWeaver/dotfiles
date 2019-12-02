@@ -11,9 +11,10 @@ cask "zoomus"
 cask "slack"
 cask "encryptme"
 cask "docker"
+cask "postman"
 
 brew "go"
 brew "gotags"
 brew "hub"
 brew "fontforge"
-
+brew "awscli"

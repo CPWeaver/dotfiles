@@ -42,6 +42,8 @@ if type brew >/dev/null 2>&1; then
   for file in $(brew --prefix)/etc/bash_completion.d/* ; do
     source "$file"
   done
+  
+  [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
   if [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
     . "$(brew --prefix)/share/bash-completion/bash_completion"
@@ -121,8 +123,6 @@ export LD_LIBRARY_PATH=/usr/lib32
 
 export GRADLE_OPTS="-Xmx2048m"
 
-export EDITOR=vi
-
-export MAILDIR="$HOME/mail/readytalk"
+export EDITOR=nvim
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

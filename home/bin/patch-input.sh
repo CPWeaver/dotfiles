@@ -7,11 +7,12 @@ for font in src/unpatched-fonts/InputMono/InputMono-*; do
     -script font-patcher \
     -out ~/Library/Fonts/InputMono \
     --careful \
-    --no-progressbars \
+    --progressbars \
     --fontawesome \
     --fontawesomeextension \
     --fontlinux \
     --fontlogos \
+    --material \
     --octicons \
     --powersymbols \
     --pomicons \

@@ -112,9 +112,6 @@ if [ ! -d $VIM_HOME ]; then
 fi
 
 
-export GOPATH=$HOME/dev/invision/go
-export GOBIN=$GOPATH/bin
-
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/home/cweaver/dev/deploy
 
@@ -124,5 +121,13 @@ export LD_LIBRARY_PATH=/usr/lib32
 export GRADLE_OPTS="-Xmx2048m"
 
 export EDITOR=nvim
+export NVIM_LOG_FILE="$HOME/.nvimlog"
+
+export HOSTNAME="$HOSTNAME"
+
+export FZF_DEFAULT_COMMAND='rg --hidden --files --no-ignore'
+# export FZF_DEFAULT_COMMAND='find .'
+
+export BAT_THEME="Solarized (light)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

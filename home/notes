@@ -1,5 +1,15 @@
-To fix italics in tmux
-`tic xterm-256color-italic.terminfo`
+Things I had to do manually:
+  - install nvm
+    - install nvm lts release
+    - install bash language server
+  - Download Input font
+  - Patch fonts (wrote script), mdi icons broke the letter j
+  - Update iterm settings
+  - Register xterm italic as a terminal type
+    - `tic xterm-256color-italic.terminfo`
+  - Update iterm term response to the italic term type
+  - download codeship AES keys
+  - configure logitech mouse buttons and shortcuts
 
 
 

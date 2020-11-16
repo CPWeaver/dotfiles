@@ -10,12 +10,13 @@ alias mat='~/dev/tools/mat/MemoryAnalyzer -data temp/mat -vmargs -Xmx6g'
 alias nodepath='export PATH=$(npm bin):$PATH'
 alias docekr='docker'
 alias d='docker'
+alias g='git'
 
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias teams="pushd ~/dev/invision/go/src/github.com/InVisionApp/teams-api"
+alias de='eval $(docker-machine env `docker-machine ls -q`)'
 # LS Aliases
 
 # Detect which `ls` flavor is in use

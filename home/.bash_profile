@@ -39,14 +39,8 @@ if [ -r /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 if type brew >/dev/null 2>&1; then
-  for file in $(brew --prefix)/etc/bash_completion.d/* ; do
-    source "$file"
-  done
-  
-  [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
-
-  if [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-    . "$(brew --prefix)/share/bash-completion/bash_completion"
+  if [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] ; then
+    . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
   fi
 fi
 
@@ -54,34 +48,23 @@ if [ -r "$HOME/.homesick/repos/homeshick/homeshick.sh" ]; then
   source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fi
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
-HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoreboth
+# # don't put duplicate lines in the history. See bash(1) for more options
+# # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+# HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
+# # ... or force ignoredups and ignorespace
+# HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+# # check the window size after each command and, if necessary,
+# # update the values of LINES and COLUMNS.
+# shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# Load hue automatically by adding
-# the following to ~/.bash_profile:
-export HUE_SCRIPT="/home/cweaver/dev/hue/bin/hue"
-if [ -r $HUE_SCRIPT ]; then
-  eval "$($HUE_SCRIPT init -)"
-fi
-
-if command_exists rbenv ; then
-  eval "$(rbenv init -)" 
-fi
+# # make less more friendly for non-text input files, see lesspipe(1)
+# #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # init nvm if it exists
 if command_exists brew ; then
@@ -94,39 +77,12 @@ else
   fi
 fi
 
-# init virtualenv if it exists
-export VIRTUALENV_WRAPPER=~/.local/bin/virtualenvwrapper.sh
-if [ -r $VIRTUALENV_WRAPPER ]; then
-  source $VIRTUALENV_WRAPPER
-else 
-  export VIRTUALENV_WRAPPER=~/Library/Python/2.7/bin/virtualenvwrapper.sh
-  if [ -r $VIRTUALENV_WRAPPER ]; then
-    export PATH=$PATH:${HOME}/Library/Python/2.7/bin
-    source $VIRTUALENV_WRAPPER
-  fi
-fi
-
-export VIM_HOME=/usr/local/Cellar/neovim/0.1.1/share/nvim/runtime
-if [ ! -d $VIM_HOME ]; then
-  export VIM_HOME=/usr/share/vim/vim74
-fi
-
-
-# Ensure you have set the following environment variables
-export DEPLOY_DIR=/home/cweaver/dev/deploy
-
-export GRAILS_HOME=/home/cweaver/grails/grails
-export LD_LIBRARY_PATH=/usr/lib32
-
-export GRADLE_OPTS="-Xmx2048m"
-
 export EDITOR=nvim
 export NVIM_LOG_FILE="$HOME/.nvimlog"
 
 export HOSTNAME="$HOSTNAME"
 
 export FZF_DEFAULT_COMMAND='rg --hidden --files --no-ignore'
-# export FZF_DEFAULT_COMMAND='find .'
 
 export BAT_THEME="Solarized (light)"
 

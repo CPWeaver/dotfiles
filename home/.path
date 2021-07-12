@@ -1,5 +1,6 @@
 # vim: filetype=sh
 
+export PATH=/opt/homebrew/bin:${PATH}
 export PATH=/usr/local/bin:${PATH}
 export PATH=/usr/local/Cellar/grep/3.0/bin:${PATH}
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}

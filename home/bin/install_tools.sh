@@ -43,26 +43,27 @@ function run_install_cmds() {
 
 # install_tool "keepassxc" "git@github.com:keepassxreboot/keepassxc.git" 
 install_tool "tmux"      "git@github.com:tmux/tmux.git" 
+install_tool "kitty"      "git@github.com:kovidgoyal/kitty.git" 
 install_tool "neovim"    "git@github.com:neovim/neovim.git" 
 install_tool "fzf"       "git@github.com:junegunn/fzf.git" 
 
 
 platform=$(uname)
 
+# declare -a neovimbuild=(
+  # "neovim"
+# )
 declare -a neovimbuild=(
   "neovim"
+  "make -j8 CMAKE_INSTALL_PREFIX=/usr/local CMAKE_BUILD_TYPE=Release"
 )
-#declare -a neovimbuild=(
-  #"neovim"
-  #"make -j4"
-#)
 
 declare -a tmuxbuild=(
   "tmux"
   # "git checkout 875139f5"
   "./autogen.sh"
   "./configure"
-  "make -j4"
+  "make -j8"
 )
 
 declare -a keepassbuild=(
@@ -71,13 +72,19 @@ declare -a keepassbuild=(
   "cd build"
 )
 
+declare -a kittybuild=(
+  "kitty"
+  "make"
+  "make app"
+)
+
 declare -a fzfbuild=(
   "fzf"
 )
 
 if [[ $platform == "Darwin"* ]]; then
   keepassbuild+=("cmake -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release -DWITH_XC_ALL=ON ..")
-  keepassbuild+=("make -j4 package")
+  keepassbuild+=("make -j8 package")
 fi
 
 if [[ $platform == "Linux"* ]]; then
@@ -90,6 +97,7 @@ fi
 run_build_cmds "${tmuxbuild[@]}"
 run_build_cmds "${neovimbuild[@]}"
 run_build_cmds "${fzfbuild[@]}"
+run_build_cmds "${kittybuild[@]}"
 
 ## No auto install on mac
 if [[ $platform == "Linux"* ]]; then
@@ -99,4 +107,5 @@ fi
 
 run_install_cmds "tmux"     "sudo make install"
 # run_install_cmds "keepassxc" "cd build" "pwd" "sudo make install"
-run_install_cmds "neovim"   "sudo MACOSX_DEPLOYMENT_TARGET=10.14 make -j4 CMAKE_INSTALL_PREFIX=/usr/local CMAKE_BUILD_TYPE=Release" "sudo make -j4 install" "sudo git clean -fdx"
+run_install_cmds "neovim"   "sudo make -j8 install" "sudo git clean -fdx"
+run_install_cmds "kitty"    "rm -fr /Applications/kitty.app" "cp -pr kitty.app /Applications/."

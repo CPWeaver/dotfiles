@@ -20,5 +20,6 @@ else
     source "$HOME/.nvm/nvm.sh"
   fi
 fi
-nvm install lts/* --reinstall-packages-from=node
+nvm install lts/* 
+#nvm install lts/* --reinstall-packages-from=node
 

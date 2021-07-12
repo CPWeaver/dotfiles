@@ -30,12 +30,15 @@ brew "fzf"
 #
 
 # dependencies for compiling neovim
-brew "luajit"
+#brew "luajit"
 
 # dependencies for compiling tmux
 brew "libevent"
 brew "automake"
 brew "pkg-config"
+
+# dependencies for compiling kitty
+brew "lcms2" 
 
 # dependencies for compiling keepassxc
 brew "qt"
@@ -55,6 +58,5 @@ brew "wget"
 cask "firefox"
 cask "gimp"
 cask "google-chrome"
-cask "iterm2"
 cask "keepassxc"
 cask "scroll-reverser"

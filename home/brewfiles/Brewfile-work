@@ -1,7 +1,6 @@
 cask "pritunl"
 cask "robo-3t"
 cask "sequel-ace"
-cask "krisp"
 cask "visual-studio-code"
 cask "jet"
 cask "logitech-options"
@@ -11,12 +10,15 @@ cask "encryptme"
 cask "docker"
 cask "postman"
 cask "pgadmin4"
-cask "kitty"
 
 brew "go"
 brew "gotags"
 brew "fontforge"
 brew "awscli"
+
 brew "liquibase"
+brew "docker-machine"
+
+brew "saml2aws"
 
 brew "golangci/tap/golangci-lint"

@@ -7,5 +7,4 @@ brew "easy-tag"
 
 cask "vlc"
 cask "digikam"
-cask "evernote"
-
+cask "mactex"

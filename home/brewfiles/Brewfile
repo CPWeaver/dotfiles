@@ -36,9 +36,11 @@ brew "fzf"
 brew "libevent"
 brew "automake"
 brew "pkg-config"
+brew "utf8proc"
 
 # dependencies for compiling kitty
 brew "lcms2" 
+brew "librsync"
 
 # dependencies for compiling keepassxc
 brew "qt"

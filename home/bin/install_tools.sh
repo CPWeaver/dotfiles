@@ -23,7 +23,7 @@ function run_build_cmds() {
   git clean -fdx
   commands=( "$@" )
   for command in "${commands[@]}"; do
-    $command || exit 1
+    eval ${command} || exit 1
   done
 }
 
@@ -60,9 +60,9 @@ declare -a neovimbuild=(
 
 declare -a tmuxbuild=(
   "tmux"
-  # "git checkout 875139f5"
   "./autogen.sh"
-  "./configure"
+  # "./configure --enable-utf8proc "
+  './configure  --enable-utf8proc CPPFLAGS="-I/opt/homebrew/include" LDFLAGS="-L/opt/homebrew/lib -lutf8proc"'
   "make -j8"
 )
 
@@ -74,8 +74,8 @@ declare -a keepassbuild=(
 
 declare -a kittybuild=(
   "kitty"
-  "make"
-  "make app"
+  'CFLAGS=-I/opt/homebrew/include LDFLAGS="-L/opt/homebrew/lib -lrsync" make'
+  'CFLAGS=-I/opt/homebrew/include LDFLAGS="-L/opt/homebrew/lib -lrsync" make app'
 )
 
 declare -a fzfbuild=(

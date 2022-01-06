@@ -10,6 +10,7 @@ cask "encryptme"
 cask "docker"
 cask "postman"
 cask "pgadmin4"
+cask "jabra-direct"
 
 brew "go"
 brew "gotags"

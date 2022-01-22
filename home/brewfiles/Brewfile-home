@@ -1,8 +1,8 @@
-tap "varenc/ffmpeg"
+tap "homebrew-ffmpeg/ffmpeg"
 
 brew "media-info"
 brew "fdk-aac"
-brew "varenc/ffmpeg/ffmpeg", args: ["with-fdk-aac"]
+brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-fdk-aac"] 
 brew "easy-tag"
 
 cask "vlc"

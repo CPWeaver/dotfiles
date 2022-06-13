@@ -36,7 +36,7 @@
   su = remote show upstream
   sp = remote show pstros
   mt = mergetool -t meld
-  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+  cleanup = "!git branch --merged | grep  -v '\\*\\|main\\|develop\\|master' | xargs -n 1 git branch -d"
 [push]
 	default = simple
 [url "git@github.com:"]
@@ -45,3 +45,5 @@
 	ff = only
 [core]
   excludesfile = /Users/chrisweaver/.gitignore
+[safe]
+	directory = /Users/chrisweaver/dev/tools/neovim

@@ -6,6 +6,16 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# on mac, /etc/profile runs "path_helper" that unconditionally
+# prepends /etc/paths and /etc/paths.d contents to your PATH.
+# When run in tmux it overwrites any reordering done below and/or
+# duplicates entries. Clearing path and sourcing it manually results
+# in a consistent path regardless of if nested in tmux or not.
+if [ -f /etc/profile ]; then
+  PATH=""
+  source /etc/profile
+fi
+
 set -o vi
 bind '"jk":vi-movement-mode'
 

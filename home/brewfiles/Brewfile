@@ -43,7 +43,8 @@ brew "lcms2"
 brew "librsync"
 
 # dependencies for compiling keepassxc
-brew "qt"
+# this breaks harfbuzz which is used for kitty
+# brew "qt"
 brew "libgcrypt"
 brew "libyubikey"
 brew "ykpers"
@@ -66,4 +67,3 @@ cask "scroll-reverser"
 cask "slack"
 cask "jabra-direct"
 cask "zsa-wally"
-cask "kitty"

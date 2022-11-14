@@ -75,6 +75,7 @@ declare -a keepassbuild=(
 declare -a kittybuild=(
   "kitty"
   'CFLAGS=-I/opt/homebrew/include LDFLAGS="-L/opt/homebrew/lib -lrsync" make'
+  'CFLAGS=-I/opt/homebrew/include LDFLAGS="-L/opt/homebrew/lib -lrsync" make docs'
   'CFLAGS=-I/opt/homebrew/include LDFLAGS="-L/opt/homebrew/lib -lrsync" make app'
 )
 
@@ -97,7 +98,7 @@ fi
 run_build_cmds "${tmuxbuild[@]}"
 run_build_cmds "${neovimbuild[@]}"
 run_build_cmds "${fzfbuild[@]}"
-run_build_cmds "${kittybuild[@]}"
+# run_build_cmds "${kittybuild[@]}"
 
 ## No auto install on mac
 if [[ $platform == "Linux"* ]]; then
@@ -108,4 +109,4 @@ fi
 run_install_cmds "tmux"     "sudo make install"
 # run_install_cmds "keepassxc" "cd build" "pwd" "sudo make install"
 run_install_cmds "neovim"   "sudo make -j8 install" "sudo git clean -fdx"
-run_install_cmds "kitty"    "rm -fr /Applications/kitty.app" "cp -pr kitty.app /Applications/."
+# run_install_cmds "kitty"    "rm -fr /Applications/kitty.app" "cp -pr kitty.app /Applications/."

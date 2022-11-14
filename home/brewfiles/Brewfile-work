@@ -14,6 +14,7 @@ brew "go"
 brew "gotags"
 brew "fontforge"
 brew "awscli"
+brew "gpg"
 
 brew "liquibase"
 brew "docker-machine"

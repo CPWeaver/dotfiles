@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */Users/chrisweaver/dev/tools/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/Users/chrisweaver/dev/tools/fzf/bin"
+  PATH="${PATH:+${PATH}:}/Users/chrisweaver/dev/tools/fzf/bin"
 fi
 
 # Auto-completion

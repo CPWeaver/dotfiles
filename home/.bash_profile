@@ -76,6 +76,8 @@ shopt -s histappend
 # # make less more friendly for non-text input files, see lesspipe(1)
 # #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+export LANG=en_US.UTF-8
+
 # init nvm if it exists
 if command_exists brew ; then
   export NVM_DIR="$HOME/.nvm"
@@ -95,5 +97,8 @@ export HOSTNAME="$HOSTNAME"
 export FZF_DEFAULT_COMMAND='rg --hidden --files --no-ignore'
 
 export BAT_THEME="Solarized (light)"
+
+GPG_TTY=$(tty)
+export GPG_TTY
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

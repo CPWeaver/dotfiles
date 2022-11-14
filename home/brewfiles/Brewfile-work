@@ -10,7 +10,6 @@ cask "docker"
 cask "postman"
 cask "pgadmin4"
 
-brew "go"
 brew "gotags"
 brew "fontforge"
 brew "awscli"
@@ -21,4 +20,3 @@ brew "docker-machine"
 
 brew "saml2aws"
 
-brew "golangci/tap/golangci-lint"

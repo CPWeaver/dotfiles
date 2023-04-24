@@ -43,10 +43,9 @@ function run_install_cmds() {
 
 # install_tool "keepassxc" "git@github.com:keepassxreboot/keepassxc.git" 
 install_tool "tmux"      "git@github.com:tmux/tmux.git" 
-install_tool "kitty"      "git@github.com:kovidgoyal/kitty.git" 
+install_tool "kitty"     "git@github.com:kovidgoyal/kitty.git" 
 install_tool "neovim"    "git@github.com:neovim/neovim.git" 
 install_tool "fzf"       "git@github.com:junegunn/fzf.git" 
-
 
 platform=$(uname)
 

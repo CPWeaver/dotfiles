@@ -89,6 +89,10 @@ else
   fi
 fi
 
+if command_exists gdircolors ; then
+  eval $(gdircolors ~/.dircolors)
+fi
+
 export EDITOR=nvim
 export NVIM_LOG_FILE="$HOME/.nvimlog"
 

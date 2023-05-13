@@ -14,20 +14,25 @@
   # exiftool -delete_original! "$sidecar" "$original"
 # done
 
-exiftool -preserve -progress -ext heic -tagsfromfile %d%f.%e.xmp -all:all -r $1
-exiftool -preserve -progress -ext mov -tagsfromfile %d%f.%e.xmp -all:all -r $1
-exiftool -preserve -progress -ext png -tagsfromfile %d%f.%e.xmp -all:all -r $1
-exiftool -preserve -progress -ext jpg -tagsfromfile %d%f.%e.xmp -all:all -r $1
-find $1 -name "*original" -delete
+exiftool -preserve -progress -ext heic -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+exiftool -preserve -progress -ext mov -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+exiftool -preserve -progress -ext png -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+exiftool -preserve -progress -ext jpg -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+find "$1" -name "*original" -delete
 
+
+#"-directory<filemodifydate" "-directory<createdate" "-directory<datetimeoriginal"
+
+# find files tagged with a person
+# exiftool -if '$XMP:TagsList=~/Peoples/' -TagsList IMG_4707.HEIC
 
 exiftool \
   -P \
   -progress \
   -r \
-  '-filename<${createdate#;DateFmt("%Y")}-new/${createdate#;DateFmt("%m")}/${subject;}/${createdate#;DateFmt("%Y-%m-%d")}/Screenshot/%f.%e' \
-  '-filename<${createdate#;DateFmt("%Y")}-new/${createdate#;DateFmt("%m")}/${subject;}/${createdate#;DateFmt("%Y-%m-%d")}/${model;}/%f.%e' \
-  $1
+  '-filename<${createdate#;DateFmt("%Y")}/${createdate#;DateFmt("%m")}-new/${tagslist@;$_=undef if /#/}/${createdate#;DateFmt("%Y-%m-%d")}/Screenshot/%f.%e' \
+  '-filename<${createdate#;DateFmt("%Y")}/${createdate#;DateFmt("%m")}-new/${tagslist@;$_=undef if /#/}/${createdate#;DateFmt("%Y-%m-%d")}/${model;}/%f.%e' \
+  "$1"
 
 # exiftool \
   # -preserve \

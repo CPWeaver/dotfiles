@@ -11,24 +11,45 @@ if ! echo $TERM | grep 256 >/dev/null 2>&1; then
   fi
 fi
 
-if tput setaf 1 &> /dev/null; then
+if [[ $COLORTERM =~ ^(truecolor|24bit)$ ]]; then 
+      BOLD=$(tput bold)
+      RESET=$(tput sgr0)
+
+      background_code="29;31;33"
+      white_code="197;200;198"
+
+      # tomorrow-night colorscheme, manually converted from hex codes
+      red_code="204;102;102"
+      orange_code="222;147;95"
+      yellow_code="240;198;116"
+      green_code="181;188;104"
+      aqua_code="138;190;183"
+      blue_code="129;162;190"
+      purple_code="178;148;187"
+
+
+      BACKGROUND="\e[48;2;${background_code}m"
+
+      RED="\e[38;2;${red_code}m"
+      ORANGE="\e[38;2;${orange_code}m"
+      BLUE="\e[38;2;${blue_code}m"
+      AQUA="\e[38;2;${aqua_code}m"
+      GREEN="\e[38;2;${green_code}m"
+      PURPLE="\e[38;2;${purple_code}m"
+      WHITE="\e[38;2;${white_code}m"
+      YELLOW="\e[38;2;${yellow_code}m"
+elif  tput setaf 1 &> /dev/null; then
     tput sgr0
     if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-      MAGENTA=$(tput setaf 5)
       RED=$(tput setaf 1)
       ORANGE=$(tput setaf 4)
+      BLUE=$(tput setaf 4)
+      AQUA=$(tput setaf 1)
       GREEN=$(tput setaf 2)
       PURPLE=$(tput setaf 1)
       WHITE=$(tput setaf 12)
-      YELLOW=$(tput setaf 11)
-      # TODO: These aren't getting the right colors
-      #MAGENTA=$(tput setaf 9)
-      #ORANGE=$(tput setaf 172)
-      #GREEN=$(tput setaf 190)
-      #PURPLE=$(tput setaf 141)
-      #WHITE=$(tput setaf 0)
+      YELLOW=$(tput setaf 3)
     else
-      MAGENTA=$(tput setaf 5)
       ORANGE=$(tput setaf 4)
       GREEN=$(tput setaf 2)
       PURPLE=$(tput setaf 1)
@@ -37,7 +58,6 @@ if tput setaf 1 &> /dev/null; then
     BOLD=$(tput bold)
     RESET=$(tput sgr0)
 else
-    MAGENTA="\033[1;31m"
     ORANGE="\033[1;33m"
     GREEN="\033[1;32m"
     PURPLE="\033[1;35m"
@@ -53,58 +73,4 @@ parse_git_branch () {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-show_environment_key () {
-  if [[ -n $ENVIRONMENT_KEY ]]; then
-    echo -n " (${ENVIRONMENT_KEY}) "
-  fi
-}
-
-PS1="\[${BOLD}${GREEN}\]\u\[$WHITE\]@\[$ORANGE\]\h\[$WHITE\]:\[$YELLOW\]\w\[$ORANGE\]$(show_environment_key)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$RED\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
-
-# OLD PROMPT STUFF (for reference only)
-
-# set variable identifying the chroot you work in (used in the prompt below)
-#if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-  #debian_chroot=$(cat /etc/debian_chroot)
-#fi
-
-## set a fancy prompt (non-color, unless we know we "want" color)
-#case "$TERM" in
-  #xterm-color) color_prompt=yes;;
-#esac
-
-## uncomment for a colored prompt, if the terminal has the capability; turned
-## off by default to not distract the user: the focus in a terminal window
-## should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-#if [ -n "$force_color_prompt" ]; then
-  #if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    ## We have color support; assume it's compliant with Ecma-48
-    ## (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    ## a case would tend to support setf rather than setaf.)
-    #color_prompt=yes
-  #else
-    #color_prompt=
-  #fi
-#fi
-
-#if [ "$color_prompt" = yes ]; then
-  ##    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-  #PS1='${debian_chroot:+($debian_chroot)}\[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;33m\]\w\[\e[00m\]$(__git_ps1 2>/dev/null) \$ '
-
-#else
-  #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#fi
-#unset color_prompt force_color_prompt
-
-## If this is an xterm set the title to user@host:dir
-#case "$TERM" in
-  #xterm*|rxvt*)
-    #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    #;;
-  #*)
-    #;;
-#esac
-
-
+PS1="\[${AQUA}\]\u\[$WHITE\]@\[$GREEN\]\h\[$WHITE\]:\[$BOLD$BLUE\]\w\[$RESET$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$BOLD$RED\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"

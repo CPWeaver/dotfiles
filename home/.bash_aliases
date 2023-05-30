@@ -17,6 +17,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 alias de='eval $(docker-machine env `docker-machine ls -q`)'
+alias cat='bat'
 
 # LS Aliases
 ls_cmd="ls"

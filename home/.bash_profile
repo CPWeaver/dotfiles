@@ -101,6 +101,9 @@ export HOSTNAME="$HOSTNAME"
 export FZF_DEFAULT_COMMAND='rg --hidden --files --no-ignore'
 
 export BAT_THEME="Solarized (light)"
+export BAT_PAGER="less -RF --incsearch"
+
+export PAGER=less
 
 GPG_TTY=$(tty)
 export GPG_TTY

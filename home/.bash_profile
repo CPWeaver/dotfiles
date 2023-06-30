@@ -11,7 +11,7 @@
 # When run in tmux it overwrites any reordering done below and/or
 # duplicates entries. Clearing path and sourcing it manually results
 # in a consistent path regardless of if nested in tmux or not.
-if [ -f /etc/profile ]; then
+if [ -f /etc/profile ] && grep -q path_helper /etc/profile; then
   PATH=""
   source /etc/profile
 fi

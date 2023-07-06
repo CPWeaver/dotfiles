@@ -1,4 +1,28 @@
 #!/bin/bash
+if [ "$(uname)" == "Darwin" ]; then
+  echo "Performing extra setup for MacOS..."
+  # todo: brew
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  echo "Performing extra setup for linux..."
+  # Linux setup
+  sudo apt-get update
+  sudo apt-get install entr vim sed coreutils fzf libutf8proc-dev libevent-dev bison autotools-dev automake libncurses5-dev cmake python3 pip bat ripgrep
 
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
-npm i -g bash-language-server
+  . ~/.bash_profile
+  nvm i --lts
+  npm i -g yarn bash-language-server
+
+  mkdir -p ~/dev/tools
+
+  install_tools.sh
+
+  bash <(curl -s https://raw.githubusercontent.com/CPWeaver/dot_vim/master/install)
+
+  pip install pynvim
+
+  go install github.com/nametake/golangci-lint-langserver@latest
+fi
+
+echo; echo "Extra setup complete!"

@@ -1,3 +1,5 @@
+tap "codeship/taps" 
+
 cask "pritunl"
 cask "robo-3t"
 cask "sequel-ace"
@@ -14,6 +16,7 @@ brew "gotags"
 brew "fontforge"
 brew "awscli"
 brew "gpg"
+brew "yq"
 
 brew "liquibase"
 brew "docker-machine"

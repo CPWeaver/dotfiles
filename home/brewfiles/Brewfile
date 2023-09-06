@@ -1,9 +1,7 @@
-tap "codeship/taps" 
 tap "go-delve/delve"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-drivers"
-tap "homebrew/core"
+
 cask "xquartz"
 brew "bash"
 brew "bash-completion@2"

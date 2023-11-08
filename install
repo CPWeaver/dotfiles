@@ -1,6 +1,6 @@
 #!/bin/sh 
 
-DOTFILES="https://github.com/CPWeaver/dotfiles.git"
+DOTFILES="git@github.com:CPWeaver/dotfiles.git"
 CMDS="git"
 
 # Check for necessary commands
@@ -14,7 +14,7 @@ done
 # Install Homeshick
 if [ ! -d "$HOME/.homesick/repos/homeshick" ]; then
   echo "Installing Homeshick to manage dotfiles..."
-  git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+  git clone git@github.com:andsens/homeshick.git $HOME/.homesick/repos/homeshick
   source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
   # Install dotfiles
@@ -24,7 +24,7 @@ fi
 
 # Setup TPM
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-  git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+  git clone git@github.com:tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 fi
 
 if type defaults >& /dev/null; then

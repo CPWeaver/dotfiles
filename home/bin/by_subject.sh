@@ -14,10 +14,12 @@
   # exiftool -delete_original! "$sidecar" "$original"
 # done
 
-exiftool -preserve -progress -ext heic -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
-exiftool -preserve -progress -ext mov -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
-exiftool -preserve -progress -ext png -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
-exiftool -preserve -progress -ext jpg -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+# exiftool -preserve -progress -ext heic -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+# exiftool -preserve -progress -ext mov -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+# exiftool -preserve -progress -ext png -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+# exiftool -preserve -progress -ext jpg -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+# exiftool -preserve -progress -ext mp4 -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
+exiftool -preserve -progress -tagsfromfile %d%f.%e.xmp -all:all -r "$1"
 find "$1" -name "*original" -delete
 
 
@@ -30,16 +32,18 @@ exiftool \
   -P \
   -progress \
   -r \
-  '-filename<${createdate#;DateFmt("%Y")}/${createdate#;DateFmt("%m")}-new/${tagslist@;$_=undef if /#/}/${createdate#;DateFmt("%Y-%m-%d")}/Screenshot/%f.%e' \
-  '-filename<${createdate#;DateFmt("%Y")}/${createdate#;DateFmt("%m")}-new/${tagslist@;$_=undef if /#/}/${createdate#;DateFmt("%Y-%m-%d")}/${model;}/%f.%e' \
+  '-filename<${createdate#;DateFmt("%Y")}-new/${createdate#;DateFmt("%m")}/${tagslist@;$_=undef if /#|People/}/${createdate#;DateFmt("%Y-%m-%d")}/Screenshot/%f.%e' \
+  '-filename<${XMP:createdate#;DateFmt("%Y")}-new/${XMP:createdate#;DateFmt("%m")}/${tagslist@;$_=undef if /#|People/}/${XMP:createdate#;DateFmt("%Y-%m-%d")}/Screenshot/%f.%e' \
+  '-filename<${createdate#;DateFmt("%Y")}-new/${createdate#;DateFmt("%m")}/${tagslist@;$_=undef if /#|People/}/${createdate#;DateFmt("%Y-%m-%d")}/${model;}/%f.%e' \
+  '-filename<${XMP:createdate#;DateFmt("%Y")}-new/${XMP:createdate#;DateFmt("%m")}/${tagslist@;$_=undef if /#|People/}/${XMP:createdate#;DateFmt("%Y-%m-%d")}/${model;}/%f.%e' \
   "$1"
 
 # exiftool \
   # -preserve \
   # -progress \
   # -r \
-  # '-testname<${createdate#;DateFmt("%Y")}-new/${createdate#;DateFmt("%m")}/${subject;}/${createdate#;DateFmt("%Y-%m-%d")}/Screenshot/%f.%e' \
-  # '-testname<${createdate#;DateFmt("%Y")}-new/${createdate#;DateFmt("%m")}/${subject;}/${createdate#;DateFmt("%Y-%m-%d")}/${model;}/%f.%e' \
+  # '-testname<${createdate#;DateFmt("%Y")}/${createdate#;DateFmt("%m")}-new/${tagslist@;$_=undef if /#/}/${createdate#;DateFmt("%Y-%m-%d")}/Screenshot/%f.%e' \
+  # '-testname<${createdate#;DateFmt("%Y")}/${createdate#;DateFmt("%m")}-new/${tagslist@;$_=undef if /#/}/${createdate#;DateFmt("%Y-%m-%d")}/${model;}/%f.%e' \
   # $1
 
 find "$1" -type d -empty -delete

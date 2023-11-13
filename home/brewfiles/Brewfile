@@ -1,6 +1,4 @@
-tap "go-delve/delve"
 tap "homebrew/bundle"
-tap "homebrew/cask-drivers"
 
 cask "xquartz"
 brew "bash"
@@ -9,26 +7,20 @@ brew "cmake"
 brew "bat"
 brew "coreutils"
 brew "ctags"
-brew "elinks"
 brew "fontforge"
 brew "gifsicle"
 brew "git"
-brew "go"
-brew "graphviz"
 brew "nvm"
 brew "python"
 brew "ripgrep"
 brew "fzf"
-brew "golangci/tap/golangci-lint"
 brew "entr"
 
-#
-# tap "neomutt/neomutt"
-# brew "isync"
-# brew "jp2a"
-# brew "notmuch"
-# brew "neomutt/neomutt/neomutt", args: ["with-notmuch-patch"]
-#
+
+# tap "go-delve/delve"
+# brew "go"
+# brew "golangci/tap/golangci-lint"
+
 
 # dependencies for compiling neovim
 #brew "luajit"
@@ -46,25 +38,24 @@ brew "librsync"
 # dependencies for compiling keepassxc
 # this breaks harfbuzz which is used for kitty
 # brew "qt"
-brew "libgcrypt"
-brew "libyubikey"
-brew "ykpers"
-brew "argon2"
-brew "libsodium"
-brew "qrencode"
+# brew "libgcrypt"
+# brew "libyubikey"
+# brew "ykpers"
+# brew "argon2"
+# brew "libsodium"
+# brew "qrencode"
 
 brew "reattach-to-user-namespace"
 brew "ruby", link: true
 brew "terminal-notifier"
-brew "the_silver_searcher"
+# brew "the_silver_searcher"
 brew "urlview"
 brew "wget"
 
 cask "firefox"
-cask "gimp"
 cask "google-chrome"
 cask "keepassxc"
-cask "scroll-reverser"
+# cask "scroll-reverser"
 cask "slack"
-cask "jabra-direct"
 cask "zsa-wally"
+cask "kitty"

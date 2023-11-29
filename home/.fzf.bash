@@ -1,13 +1,13 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */Users/chrisweaver/dev/tools/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/Users/chrisweaver/dev/tools/fzf/bin"
+if [[ ! "$PATH" == */Users/chris/dev/tools/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/Users/chris/dev/tools/fzf/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/Users/chrisweaver/dev/tools/fzf/shell/completion.bash" 2> /dev/null
+source "/Users/chris/dev/tools/fzf/shell/completion.bash"
 
 # Key bindings
 # ------------
-source "/Users/chrisweaver/dev/tools/fzf/shell/key-bindings.bash"
+source "/Users/chris/dev/tools/fzf/shell/key-bindings.bash"

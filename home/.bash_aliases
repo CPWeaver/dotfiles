@@ -50,3 +50,5 @@ alias ll="${ls_cmd} -alh ${colorflag}"
 alias ll="${ls_cmd} -l ${colorflag}"
 #alias la='ls -A'
 #alias l='ls -CF'
+
+alias ag='rg'

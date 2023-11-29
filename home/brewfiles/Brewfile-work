@@ -1,25 +1,18 @@
 tap "codeship/taps" 
 
-cask "pritunl"
-cask "robo-3t"
+#cask "robo-3t"
 cask "sequel-ace"
 cask "visual-studio-code"
-cask "jet"
-cask "logitech-options"
-#cask "logitech-unifying"
-cask "encryptme"
 cask "docker"
-cask "postman"
 cask "pgadmin4"
+cask "1Password"
+cask "linear-linear"
 
-brew "gotags"
 brew "fontforge"
 brew "awscli"
 brew "gpg"
 brew "yq"
 
-brew "liquibase"
-brew "docker-machine"
-
-brew "saml2aws"
+brew "doppler"
+brew "postgresql@13"
 

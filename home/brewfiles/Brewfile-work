@@ -12,6 +12,7 @@ brew "fontforge"
 brew "awscli"
 brew "gpg"
 brew "yq"
+brew "jq"
 
 brew "doppler"
 brew "postgresql@13"

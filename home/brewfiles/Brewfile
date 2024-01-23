@@ -58,3 +58,5 @@ cask "firefox"
 # cask "slack"
 cask "zsa-wally"
 cask "kitty"
+
+brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-fdk-aac"] 

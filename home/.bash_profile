@@ -110,6 +110,9 @@ export GPG_TTY
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export VIRTUAL_ENV_DISABLE_PROMPT=true
+[ -f ~/.venv/bin/activate ] && source ~/.venv/bin/activate
+
 # pnpm
 export PNPM_HOME="/Users/chris/Library/pnpm"
 case ":$PATH:" in

@@ -105,7 +105,7 @@ run_build_cmds "${fzfbuild[@]}"
   #run_install_cmds "keepassxc" "sudo make install"
 # fi
 
-run_install_cmds "fzf"      "./install --all"
+run_install_cmds "fzf"      "./install --all --no-update-rc"
 run_install_cmds "tmux"     "sudo make install"
 run_install_cmds "neovim"   "sudo make -j8 install" "sudo git clean -fdx"
 # run_install_cmds "keepassxc" "cd build" "pwd" "sudo make install"

@@ -15,6 +15,7 @@ brew "python"
 brew "ripgrep"
 brew "fzf"
 brew "entr"
+brew "zoxide"
 
 
 # tap "go-delve/delve"

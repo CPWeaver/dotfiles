@@ -1,5 +1,3 @@
-tap "homebrew-ffmpeg/ffmpeg"
-
 brew "media-info"
 brew "fdk-aac"
 brew "easy-tag"

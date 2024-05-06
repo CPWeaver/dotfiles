@@ -57,8 +57,11 @@ cask "firefox"
 # cask "google-chrome"
 # cask "scroll-reverser"
 # cask "slack"
-cask "zsa-wally"
+cask "keymapp"
+
 cask "kitty"
 cask "gimp"
+cask "rectangle"
 
+tap "homebrew-ffmpeg/ffmpeg"
 brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-fdk-aac"] 

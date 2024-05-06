@@ -8,6 +8,7 @@ cask "pgadmin4"
 cask "1Password"
 cask "linear-linear"
 cask "sdm"
+cask "redisinsight"
 
 brew "fontforge"
 brew "awscli"

@@ -15,6 +15,7 @@ brew "awscli"
 brew "gpg"
 brew "yq"
 brew "jq"
+brew "libpq"
 
 brew "doppler"
 brew "postgresql@13"

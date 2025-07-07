@@ -62,6 +62,7 @@ cask "keymapp"
 cask "kitty"
 cask "gimp"
 cask "rectangle"
+cask "logi-options+"
 
 tap "homebrew-ffmpeg/ffmpeg"
 brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-fdk-aac"] 

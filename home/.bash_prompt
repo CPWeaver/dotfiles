@@ -70,7 +70,7 @@ parse_git_dirty () {
   [[ $(git status 2> /dev/null | tail -n1 | cut -c 1-17) != "nothing to commit" ]] && echo "*"
 }
 parse_git_branch () {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(parse_git_dirty) \1/"
 }
 
 PS1="\[${AQUA}\]\u\[$WHITE\]@\[$GREEN\]\h\[$WHITE\]:\[$BOLD$BLUE\]\w\[$RESET$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$BOLD$RED\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"

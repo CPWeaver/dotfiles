@@ -9,6 +9,8 @@ cask "1Password"
 cask "linear-linear"
 cask "sdm"
 cask "redisinsight"
+cask "qgis"
+cask "loom"
 
 brew "fontforge"
 brew "awscli"
@@ -16,7 +18,7 @@ brew "gpg"
 brew "yq"
 brew "jq"
 brew "libpq"
+brew "postgis"
 
 brew "doppler"
 brew "postgresql@13"
-

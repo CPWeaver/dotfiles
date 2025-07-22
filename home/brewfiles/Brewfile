@@ -1,5 +1,3 @@
-tap "homebrew/bundle"
-
 cask "xquartz"
 brew "bash"
 brew "bash-completion@2"
@@ -52,6 +50,8 @@ brew "terminal-notifier"
 # brew "the_silver_searcher"
 brew "urlview"
 brew "wget"
+
+brew "rustup"
 
 cask "firefox"
 # cask "google-chrome"

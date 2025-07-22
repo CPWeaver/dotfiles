@@ -121,6 +121,12 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# rust
+if command_exists brew ; then
+  export PATH="$(brew --prefix rustup)/bin:$PATH"
+fi
+
+
 if command_exists zoxide ; then
   eval "$(zoxide init bash)"
 fi

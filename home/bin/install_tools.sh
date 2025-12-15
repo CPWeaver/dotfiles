@@ -54,7 +54,7 @@ platform=$(uname)
 # )
 declare -a neovimbuild=(
   "neovim"
-  "make -j8 CMAKE_INSTALL_PREFIX=/usr/local CMAKE_BUILD_TYPE=Release"
+  "make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=/usr/local"
 )
 
 declare -a tmuxbuild=(
@@ -107,6 +107,6 @@ run_build_cmds "${fzfbuild[@]}"
 
 run_install_cmds "fzf"      "./install --all --no-update-rc"
 run_install_cmds "tmux"     "sudo make install"
-run_install_cmds "neovim"   "sudo make -j8 install" "sudo git clean -fdx"
+run_install_cmds "neovim"   "sudo make install" "sudo git clean -fdx"
 # run_install_cmds "keepassxc" "cd build" "pwd" "sudo make install"
 # run_install_cmds "kitty"    "rm -fr /Applications/kitty.app" "cp -pr kitty.app /Applications/."

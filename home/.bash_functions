@@ -29,3 +29,8 @@ killport() {
     lsof -i tcp:$1 | awk 'NR!=1 {print $2}' | xargs kill -9
 }
 
+wp() {
+  local dir
+  dir="$(git-worktree-pick)" || return
+  cd "$dir" || return
+}

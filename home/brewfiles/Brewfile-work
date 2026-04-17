@@ -5,12 +5,12 @@ cask "cursor"
 
 cask "sequel-ace"
 cask "visual-studio-code"
-cask "docker"
+cask "docker-desktop"
 cask "pgadmin4"
 cask "1Password"
 cask "linear-linear"
 cask "sdm"
-cask "redisinsight"
+cask "redis-insight"
 cask "qgis"
 cask "loom"
 
@@ -24,3 +24,5 @@ brew "postgis"
 
 brew "doppler"
 brew "postgresql"
+
+brew "gnu-sed"

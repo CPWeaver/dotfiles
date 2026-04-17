@@ -2,6 +2,7 @@ cask "xquartz"
 brew "bash"
 brew "bash-completion@2"
 brew "cmake"
+brew "ninja"
 brew "bat"
 brew "coreutils"
 brew "ctags"
@@ -23,6 +24,7 @@ brew "zoxide"
 
 # dependencies for compiling neovim
 #brew "luajit"
+brew "luarocks"
 
 # dependencies for compiling tmux
 brew "libevent"

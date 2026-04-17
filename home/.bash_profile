@@ -52,6 +52,8 @@ if type brew >/dev/null 2>&1; then
   if [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] ; then
     . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
   fi
+
+
 fi
 
 if [ -r "$HOME/.homesick/repos/homeshick/homeshick.sh" ]; then
@@ -121,12 +123,18 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# rust
+# brew installed tooling
 if command_exists brew ; then
   export PATH="$(brew --prefix rustup)/bin:$PATH"
+
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
 fi
 
 
 if command_exists zoxide ; then
   eval "$(zoxide init bash)"
 fi
+
+export GEMINI_SANDBOX=true
+export OPENCODE_EXPERIMENTAL_LSP_TOOL=true

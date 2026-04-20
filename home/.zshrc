@@ -9,7 +9,7 @@ setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE HIST_VERIFY
 bindkey -v
 bindkey -M vicmd 'jk' vi-cmd-mode
 
-for file in ~/.zaliases ~/.zfunctions; do
+for file in ~/.zprompt ~/.zaliases ~/.zfunctions; do
   [[ -r "$file" ]] && source "$file"
 done
 unset file

@@ -67,6 +67,9 @@ assert_contains "g=git" "zsh alias g missing"
 assert_contains "ll=" "zsh alias ll missing"
 assert_contains " on" "zsh prompt missing git branch marker"
 
+run_probe "zsh login prompt probe" env -i HOME="$TEMP_HOME" ZDOTDIR="$TEMP_HOME" PATH="$PATH" zsh -lic 'vcs_info; print -P -- "$PROMPT"'
+assert_contains " on" "zsh login prompt missing git branch marker"
+
 run_probe "bash alias probe" env -i HOME="$TEMP_HOME" PATH="$PATH" bash -ic 'alias g; alias ll'
 assert_contains "alias g='git'" "bash alias g missing"
 assert_contains "alias ll=" "bash alias ll missing"

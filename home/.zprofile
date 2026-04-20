@@ -4,7 +4,7 @@ if command -v brew >/dev/null 2>&1; then
   eval "$(brew shellenv)"
 fi
 
-for file in ~/.zpath ~/.zprompt ~/.zexports ~/.zextra; do
+for file in ~/.zpath ~/.zexports ~/.zextra; do
   [[ -r "$file" ]] && source "$file"
 done
 unset file

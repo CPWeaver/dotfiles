@@ -1,0 +1,34 @@
+typeset -U path PATH
+
+path=(
+  /opt/homebrew/bin
+  /usr/local/bin
+  /usr/local/sbin
+  /opt/homebrew/opt/libpq/bin
+  $HOME/.rbenv/bin
+  $path
+  /Applications/Ghostty.app/Contents/MacOS
+  /Library/TeX/texbin
+  $HOME/bin
+  $HOME/dev/go/bin
+)
+
+if [[ -d "$HOME/Library/pnpm" ]]; then
+  path=("$HOME/Library/pnpm" $path)
+fi
+
+if command -v brew >/dev/null 2>&1; then
+  grep_path="$(brew --prefix grep 2>/dev/null)/bin"
+  ctags_path="$(brew --prefix ctags 2>/dev/null)/bin"
+  rustup_path="$(brew --prefix rustup 2>/dev/null)/bin"
+  coreutils_path="$(brew --prefix coreutils 2>/dev/null)/libexec/gnubin"
+  gnused_path="$(brew --prefix gnu-sed 2>/dev/null)/libexec/gnubin"
+
+  [[ -d "$grep_path" ]] && path=("$grep_path" $path)
+  [[ -d "$ctags_path" ]] && path=("$ctags_path" $path)
+  [[ -d "$rustup_path" ]] && path=("$rustup_path" $path)
+  [[ -d "$coreutils_path" ]] && path=("$coreutils_path" $path)
+  [[ -d "$gnused_path" ]] && path=("$gnused_path" $path)
+
+  unset grep_path ctags_path rustup_path coreutils_path gnused_path
+fi

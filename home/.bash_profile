@@ -27,6 +27,8 @@ for file in ~/.{path,bash_prompt,exports,aliases,bash_functions,extra}; do
 done
 unset file
 
+[ -r ~/.bash_secrets ] && source ~/.bash_secrets
+
 # Setup or bind to running ssh agent 
 if [ -r ~/.ssh/ssh-agent-setup ]; then
   . "$HOME/.ssh/ssh-agent-setup"

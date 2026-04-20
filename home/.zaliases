@@ -1,0 +1,35 @@
+#alias vi='gvim'
+alias vi='nvim'
+alias sa='source ~/.zaliases'
+alias vz='vi ~/.zshrc'
+alias sz='source ~/.zshrc'
+alias va='vi ~/.zaliases'
+alias sl='ls'
+alias h='history'
+alias d='docker'
+alias g='git'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias cat='bat'
+
+ls_cmd='ls'
+if type 'gls' >/dev/null 2>&1; then
+  ls_cmd='gls'
+fi
+
+if ${ls_cmd} --color >/dev/null 2>&1; then
+  colorflag='--color'
+else
+  colorflag='-G'
+fi
+
+alias ls="${ls_cmd} ${colorflag}"
+alias l="${ls_cmd} -l ${colorflag}"
+alias la="${ls_cmd} -la ${colorflag}"
+alias lsd="${ls_cmd} -l ${colorflag} | grep '^d'"
+alias ll="${ls_cmd} -l ${colorflag}"
+
+alias ag='rg'

@@ -1,0 +1,13 @@
+export LANG=en_US.UTF-8
+export EDITOR=nvim
+export NVIM_LOG_FILE="$HOME/.nvimlog"
+export FZF_DEFAULT_COMMAND='rg --hidden --files --no-ignore'
+export BAT_THEME='Solarized (light)'
+export BAT_PAGER='less -RF --incsearch'
+export PAGER=less
+export VIRTUAL_ENV_DISABLE_PROMPT=true
+export GEMINI_SANDBOX=true
+export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
+
+export GPG_TTY="$(tty)"
+[[ -r ~/.venv/bin/activate ]] && source ~/.venv/bin/activate

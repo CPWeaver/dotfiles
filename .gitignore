@@ -1,3 +1,6 @@
 # Keep environment variables out of version control
 .env
 .worktrees/
+home/.bash_secrets
+home/.extra
+home/.zextra

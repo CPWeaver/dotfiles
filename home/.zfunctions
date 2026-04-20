@@ -1,0 +1,38 @@
+# vim: filetype=sh
+
+command_exists() {
+  type "$1" >/dev/null 2>&1
+}
+
+update-tmux-environment() {
+  if command_exists dbus-launch; then
+    eval "$(dbus-launch --sh-syntax)"
+  fi
+
+  echo -n 'Updating to latest tmux environment...'
+  while IFS= read -r line; do
+    if [[ $line == -* ]]; then
+      unset "${line#-}"
+    else
+      export "$line"
+    fi
+  done < <(tmux showenv -t "$(tmux display -p '#S')")
+  echo 'Done'
+}
+
+killport() {
+  local -a pids
+  pids=("${(@f)$(lsof -ti "tcp:$1")}")
+
+  if (( ${#pids} == 0 )); then
+    return 0
+  fi
+
+  kill -9 "${pids[@]}"
+}
+
+wp() {
+  local dir
+  dir="$(git-worktree-pick)" || return
+  cd "$dir" || return
+}

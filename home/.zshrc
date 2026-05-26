@@ -31,3 +31,11 @@ if command -v zoxide >/dev/null 2>&1; then
 fi
 
 [[ -r ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+# pnpm
+export PNPM_HOME="/Users/chris/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -10,6 +10,8 @@ alias mat='~/dev/tools/mat/MemoryAnalyzer -data temp/mat -vmargs -Xmx6g'
 alias nodepath='export PATH=$(npm bin):$PATH'
 alias docekr='docker'
 alias d='docker'
+alias cs='colima start --cpu 4 --memory 12'
+alias cptr='docker run -d -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:lts'
 alias g='git'
 
 alias ..="cd .."

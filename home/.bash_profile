@@ -125,10 +125,17 @@ esac
 
 # brew installed tooling
 if command_exists brew ; then
+  colima_path="$(brew --prefix colima 2>/dev/null)/bin"
+  if [ -d "$colima_path" ]; then
+    export PATH="$colima_path:$PATH"
+  fi
+
   export PATH="$(brew --prefix rustup)/bin:$PATH"
 
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
   export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
+
+  unset colima_path
 fi
 
 

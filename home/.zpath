@@ -20,15 +20,17 @@ fi
 if command -v brew >/dev/null 2>&1; then
   grep_path="$(brew --prefix grep 2>/dev/null)/bin"
   ctags_path="$(brew --prefix ctags 2>/dev/null)/bin"
+  colima_path="$(brew --prefix colima 2>/dev/null)/bin"
   rustup_path="$(brew --prefix rustup 2>/dev/null)/bin"
   coreutils_path="$(brew --prefix coreutils 2>/dev/null)/libexec/gnubin"
   gnused_path="$(brew --prefix gnu-sed 2>/dev/null)/libexec/gnubin"
 
   [[ -d "$grep_path" ]] && path=("$grep_path" $path)
   [[ -d "$ctags_path" ]] && path=("$ctags_path" $path)
+  [[ -d "$colima_path" ]] && path=("$colima_path" $path)
   [[ -d "$rustup_path" ]] && path=("$rustup_path" $path)
   [[ -d "$coreutils_path" ]] && path=("$coreutils_path" $path)
   [[ -d "$gnused_path" ]] && path=("$gnused_path" $path)
 
-  unset grep_path ctags_path rustup_path coreutils_path gnused_path
+  unset grep_path ctags_path colima_path rustup_path coreutils_path gnused_path
 fi

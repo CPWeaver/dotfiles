@@ -38,7 +38,7 @@
   mt = mergetool -t meld
   cleanup = "!git branch --merged | grep  -v '\\*\\|main\\|develop\\|master' | xargs -n 1 git branch -d"
   worktrees = "worktree list"
-  prunetrees = "worktree prune" cleanup = "!git branch --merged | grep  -v '\\*\\|main\\|develop\\|master' | xargs -n 1 git branch -d"
+  prunetrees = "worktree prune"
   wt = "worktree list"
 [push]
 	default = simple

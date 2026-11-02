@@ -31,6 +31,7 @@ brew "libevent"
 brew "automake"
 brew "pkg-config"
 brew "utf8proc"
+brew "jemalloc"
 
 # dependencies for compiling kitty
 brew "lcms2" 

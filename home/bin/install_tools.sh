@@ -61,7 +61,7 @@ declare -a tmuxbuild=(
   "tmux"
   "./autogen.sh"
   # "./configure --enable-utf8proc "
-  './configure  --enable-utf8proc CPPFLAGS="-I/opt/homebrew/include" LDFLAGS="-L/opt/homebrew/lib -lutf8proc"'
+  './configure  --enable-utf8proc --enable-jemalloc CPPFLAGS="-I/opt/homebrew/include" LDFLAGS="-L/opt/homebrew/lib -lutf8proc"'
   "make -j8"
 )
 
